@@ -1,3 +1,554 @@
-./task-01-design-system/scripts/tokens-to-css.js:1:#!/usr/bin/env node
-./task-01-design-system/scripts/tokens-to-css.js:76:  if (/^#[0-9a-f]{6}ff$/i.test(s)) {
-./task-01-design-system/scripts/tokens-to-css.js:80:  if (/^#[0-9a-f]{8}$/i.test(s)) {
+d3da"
+./task-01-design-system/design-system/color.styles.tokens.json:1028:          "$value": "#cac5cd"
+./task-01-design-system/design-system/color.styles.tokens.json:1034:          "$value": "#f5edff"
+./task-01-design-system/design-system/color.styles.tokens.json:1038:          "$value": "#cfbdfe"
+./task-01-design-system/design-system/color.styles.tokens.json:1042:          "$value": "#000000"
+./task-01-design-system/design-system/color.styles.tokens.json:1046:          "$value": "#cbb9fa"
+./task-01-design-system/design-system/color.styles.tokens.json:1050:          "$value": "#0f0033"
+./task-01-design-system/design-system/color.styles.tokens.json:1054:          "$value": "#f5edff"
+./task-01-design-system/design-system/color.styles.tokens.json:1058:          "$value": "#000000"
+./task-01-design-system/design-system/color.styles.tokens.json:1062:          "$value": "#cbb9fa"
+./task-01-design-system/design-system/color.styles.tokens.json:1066:          "$value": "#0f0033"
+./task-01-design-system/design-system/color.styles.tokens.json:1070:          "$value": "#ffebef"
+./task-01-design-system/design-system/color.styles.tokens.json:1074:          "$value": "#000000"
+./task-01-design-system/design-system/color.styles.tokens.json:1078:          "$value": "#feabc5"
+./task-01-design-system/design-system/color.styles.tokens.json:1082:          "$value": "#20000d"
+./task-01-design-system/design-system/color.styles.tokens.json:1086:          "$value": "#ffecea"
+./task-01-design-system/design-system/color.styles.tokens.json:1090:          "$value": "#000000"
+./task-01-design-system/design-system/color.styles.tokens.json:1094:          "$value": "#ffaea7"
+./task-01-design-system/design-system/color.styles.tokens.json:1098:          "$value": "#220001"
+./task-01-design-system/design-system/color.styles.tokens.json:1102:          "$value": "#141218"
+./task-01-design-system/design-system/color.styles.tokens.json:1106:          "$value": "#e6e0e9"
+./task-01-design-system/design-system/color.styles.tokens.json:1110:          "$value": "#141318"
+./task-01-design-system/design-system/color.styles.tokens.json:1114:          "$value": "#ffffff"
+./task-01-design-system/design-system/color.styles.tokens.json:1118:          "$value": "#48454e"
+./task-01-design-system/design-system/color.styles.tokens.json:1122:          "$value": "#ffffff"
+./task-01-design-system/design-system/color.styles.tokens.json:1126:          "$value": "#f4eef9"
+./task-01-design-system/design-system/color.styles.tokens.json:1130:          "$value": "#c6c1cc"
+./task-01-design-system/design-system/color.styles.tokens.json:1134:          "$value": "#000000"
+./task-01-design-system/design-system/color.styles.tokens.json:1138:          "$value": "#000000"
+./task-01-design-system/design-system/color.styles.tokens.json:1142:          "$value": "#e6e1e9"
+./task-01-design-system/design-system/color.styles.tokens.json:1146:          "$value": "#000000"
+./task-01-design-system/design-system/color.styles.tokens.json:1150:          "$value": "#4e3f77"
+./task-01-design-system/design-system/color.styles.tokens.json:1154:          "$value": "#e9ddff"
+./task-01-design-system/design-system/color.styles.tokens.json:1158:          "$value": "#000000"
+./task-01-design-system/design-system/color.styles.tokens.json:1162:          "$value": "#cfbdfe"
+./task-01-design-system/design-system/color.styles.tokens.json:1166:          "$value": "#16033d"
+./task-01-design-system/design-system/color.styles.tokens.json:1170:          "$value": "#e9ddff"
+./task-01-design-system/design-system/color.styles.tokens.json:1174:          "$value": "#000000"
+./task-01-design-system/design-system/color.styles.tokens.json:1178:          "$value": "#cfbdfe"
+./task-01-design-system/design-system/color.styles.tokens.json:1182:          "$value": "#16033d"
+./task-01-design-system/design-system/color.styles.tokens.json:1186:          "$value": "#ffd9e3"
+./task-01-design-system/design-system/color.styles.tokens.json:1190:          "$value": "#000000"
+./task-01-design-system/design-system/color.styles.tokens.json:1194:          "$value": "#ffb0c9"
+./task-01-design-system/design-system/color.styles.tokens.json:1198:          "$value": "#2b0013"
+./task-01-design-system/design-system/color.styles.tokens.json:1202:          "$value": "#141318"
+./task-01-design-system/design-system/color.styles.tokens.json:1206:          "$value": "#524f55"
+./task-01-design-system/design-system/color.styles.tokens.json:1210:          "$value": "#000000"
+./task-01-design-system/design-system/color.styles.tokens.json:1214:          "$value": "#211f24"
+./task-01-design-system/design-system/color.styles.tokens.json:1218:          "$value": "#322f35"
+./task-01-design-system/design-system/color.styles.tokens.json:1222:          "$value": "#3d3a41"
+./task-01-design-system/design-system/color.styles.tokens.json:1226:          "$value": "#48464c"
+./task-01-design-system/design-system/color.styles.tokens.json:1232:          "$value": "#3c2d63"
+./task-01-design-system/design-system/color.styles.tokens.json:1236:          "$value": "#65558f"
+./task-01-design-system/design-system/color.styles.tokens.json:1240:          "$value": "#ffffff"
+./task-01-design-system/design-system/color.styles.tokens.json:1244:          "$value": "#74649f"
+./task-01-design-system/design-system/color.styles.tokens.json:1248:          "$value": "#ffffff"
+./task-01-design-system/design-system/color.styles.tokens.json:1252:          "$value": "#3c2d63"
+./task-01-design-system/design-system/color.styles.tokens.json:1256:          "$value": "#ffffff"
+./task-01-design-system/design-system/color.styles.tokens.json:1260:          "$value": "#74649f"
+./task-01-design-system/design-system/color.styles.tokens.json:1264:          "$value": "#ffffff"
+./task-01-design-system/design-system/color.styles.tokens.json:1268:          "$value": "#5b2238"
+./task-01-design-system/design-system/color.styles.tokens.json:1272:          "$value": "#ffffff"
+./task-01-design-system/design-system/color.styles.tokens.json:1276:          "$value": "#9c5870"
+./task-01-design-system/design-system/color.styles.tokens.json:1280:          "$value": "#ffffff"
+./task-01-design-system/design-system/color.styles.tokens.json:1284:          "$value": "#5e2320"
+./task-01-design-system/design-system/color.styles.tokens.json:1288:          "$value": "#ffffff"
+./task-01-design-system/design-system/color.styles.tokens.json:1292:          "$value": "#a15853"
+./task-01-design-system/design-system/color.styles.tokens.json:1296:          "$value": "#ffffff"
+./task-01-design-system/design-system/color.styles.tokens.json:1300:          "$value": "#fdf7ff"
+./task-01-design-system/design-system/color.styles.tokens.json:1304:          "$value": "#1d1b20"
+./task-01-design-system/design-system/color.styles.tokens.json:1308:          "$value": "#fdf7ff"
+./task-01-design-system/design-system/color.styles.tokens.json:1312:          "$value": "#121016"
+./task-01-design-system/design-system/color.styles.tokens.json:1316:          "$value": "#e6e0ec"
+./task-01-design-system/design-system/color.styles.tokens.json:1320:          "$value": "#37353e"
+./task-01-design-system/design-system/color.styles.tokens.json:1324:          "$value": "#54515a"
+./task-01-design-system/design-system/color.styles.tokens.json:1328:          "$value": "#6f6b75"
+./task-01-design-system/design-system/color.styles.tokens.json:1332:          "$value": "#000000"
+./task-01-design-system/design-system/color.styles.tokens.json:1336:          "$value": "#000000"
+./task-01-design-system/design-system/color.styles.tokens.json:1340:          "$value": "#322f35"
+./task-01-design-system/design-system/color.styles.tokens.json:1344:          "$value": "#f5eff7"
+./task-01-design-system/design-system/color.styles.tokens.json:1348:          "$value": "#cfbdfe"
+./task-01-design-system/design-system/color.styles.tokens.json:1352:          "$value": "#74649f"
+./task-01-design-system/design-system/color.styles.tokens.json:1356:          "$value": "#ffffff"
+./task-01-design-system/design-system/color.styles.tokens.json:1360:          "$value": "#5b4c84"
+./task-01-design-system/design-system/color.styles.tokens.json:1364:          "$value": "#ffffff"
+./task-01-design-system/design-system/color.styles.tokens.json:1368:          "$value": "#74649f"
+./task-01-design-system/design-system/color.styles.tokens.json:1372:          "$value": "#ffffff"
+./task-01-design-system/design-system/color.styles.tokens.json:1376:          "$value": "#5b4c84"
+./task-01-design-system/design-system/color.styles.tokens.json:1380:          "$value": "#ffffff"
+./task-01-design-system/design-system/color.styles.tokens.json:1384:          "$value": "#9c5870"
+./task-01-design-system/design-system/color.styles.tokens.json:1388:          "$value": "#ffffff"
+./task-01-design-system/design-system/color.styles.tokens.json:1392:          "$value": "#804057"
+./task-01-design-system/design-system/color.styles.tokens.json:1396:          "$value": "#ffffff"
+./task-01-design-system/design-system/color.styles.tokens.json:1400:          "$value": "#cac5cd"
+./task-01-design-system/design-system/color.styles.tokens.json:1404:          "$value": "#fdf7ff"
+./task-01-design-system/design-system/color.styles.tokens.json:1408:          "$value": "#ffffff"
+./task-01-design-system/design-system/color.styles.tokens.json:1412:          "$value": "#f7f2fa"
+./task-01-design-system/design-system/color.styles.tokens.json:1416:          "$value": "#ece6ee"
+./task-01-design-system/design-system/color.styles.tokens.json:1420:          "$value": "#e0dbe3"
+./task-01-design-system/design-system/color.styles.tokens.json:1424:          "$value": "#d5d0d8"
+./task-01-design-system/design-system/color.styles.tokens.json:1430:          "$value": "#e3d6ff"
+./task-01-design-system/design-system/color.styles.tokens.json:1434:          "$value": "#cfbdfe"
+./task-01-design-system/design-system/color.styles.tokens.json:1438:          "$value": "#2b1b52"
+./task-01-design-system/design-system/color.styles.tokens.json:1442:          "$value": "#9887c5"
+./task-01-design-system/design-system/color.styles.tokens.json:1446:          "$value": "#000000"
+./task-01-design-system/design-system/color.styles.tokens.json:1450:          "$value": "#e3d6ff"
+./task-01-design-system/design-system/color.styles.tokens.json:1454:          "$value": "#2b1b52"
+./task-01-design-system/design-system/color.styles.tokens.json:1458:          "$value": "#9887c5"
+./task-01-design-system/design-system/color.styles.tokens.json:1462:          "$value": "#000000"
+./task-01-design-system/design-system/color.styles.tokens.json:1466:          "$value": "#ffd0dd"
+./task-01-design-system/design-system/color.styles.tokens.json:1470:          "$value": "#471228"
+./task-01-design-system/design-system/color.styles.tokens.json:1474:          "$value": "#c57b93"
+./task-01-design-system/design-system/color.styles.tokens.json:1478:          "$value": "#000000"
+./task-01-design-system/design-system/color.styles.tokens.json:1482:          "$value": "#ffd2ce"
+./task-01-design-system/design-system/color.styles.tokens.json:1486:          "$value": "#481311"
+./task-01-design-system/design-system/color.styles.tokens.json:1490:          "$value": "#cc7b74"
+./task-01-design-system/design-system/color.styles.tokens.json:1494:          "$value": "#000000"
+./task-01-design-system/design-system/color.styles.tokens.json:1498:          "$value": "#141218"
+./task-01-design-system/design-system/color.styles.tokens.json:1502:          "$value": "#e6e0e9"
+./task-01-design-system/design-system/color.styles.tokens.json:1506:          "$value": "#141318"
+./task-01-design-system/design-system/color.styles.tokens.json:1510:          "$value": "#ffffff"
+./task-01-design-system/design-system/color.styles.tokens.json:1514:          "$value": "#48454e"
+./task-01-design-system/design-system/color.styles.tokens.json:1518:          "$value": "#e0dae5"
+./task-01-design-system/design-system/color.styles.tokens.json:1522:          "$value": "#b5b0bb"
+./task-01-design-system/design-system/color.styles.tokens.json:1526:          "$value": "#938f99"
+./task-01-design-system/design-system/color.styles.tokens.json:1530:          "$value": "#000000"
+./task-01-design-system/design-system/color.styles.tokens.json:1534:          "$value": "#000000"
+./task-01-design-system/design-system/color.styles.tokens.json:1538:          "$value": "#e6e1e9"
+./task-01-design-system/design-system/color.styles.tokens.json:1542:          "$value": "#2b292f"
+./task-01-design-system/design-system/color.styles.tokens.json:1546:          "$value": "#4e3f77"
+./task-01-design-system/design-system/color.styles.tokens.json:1550:          "$value": "#e9ddff"
+./task-01-design-system/design-system/color.styles.tokens.json:1554:          "$value": "#16033d"
+./task-01-design-system/design-system/color.styles.tokens.json:1558:          "$value": "#cfbdfe"
+./task-01-design-system/design-system/color.styles.tokens.json:1562:          "$value": "#3c2d63"
+./task-01-design-system/design-system/color.styles.tokens.json:1566:          "$value": "#e9ddff"
+./task-01-design-system/design-system/color.styles.tokens.json:1570:          "$value": "#16033d"
+./task-01-design-system/design-system/color.styles.tokens.json:1574:          "$value": "#cfbdfe"
+./task-01-design-system/design-system/color.styles.tokens.json:1578:          "$value": "#3c2d63"
+./task-01-design-system/design-system/color.styles.tokens.json:1582:          "$value": "#ffd9e3"
+./task-01-design-system/design-system/color.styles.tokens.json:1586:          "$value": "#2b0013"
+./task-01-design-system/design-system/color.styles.tokens.json:1590:          "$value": "#ffb0c9"
+./task-01-design-system/design-system/color.styles.tokens.json:1594:          "$value": "#5b2238"
+./task-01-design-system/design-system/color.styles.tokens.json:1598:          "$value": "#141318"
+./task-01-design-system/design-system/color.styles.tokens.json:1602:          "$value": "#46434a"
+./task-01-design-system/design-system/color.styles.tokens.json:1606:          "$value": "#08070b"
+./task-01-design-system/design-system/color.styles.tokens.json:1610:          "$value": "#1e1d22"
+./task-01-design-system/design-system/color.styles.tokens.json:1614:          "$value": "#29272d"
+./task-01-design-system/design-system/color.styles.tokens.json:1618:          "$value": "#343238"
+./task-01-design-system/design-system/color.styles.tokens.json:1622:          "$value": "#3f3d43"
+./task-01-design-system/design-system/color.styles.tokens.json:1828:          "$value": "#ffffff"
+./task-01-design-system/design-system/color.styles.tokens.json:1832:          "$value": "#fffbff"
+./task-01-design-system/design-system/color.styles.tokens.json:1836:          "$value": "#fdf7ff"
+./task-01-design-system/design-system/color.styles.tokens.json:1840:          "$value": "#f6eeff"
+./task-01-design-system/design-system/color.styles.tokens.json:1844:          "$value": "#e9ddff"
+./task-01-design-system/design-system/color.styles.tokens.json:1848:          "$value": "#cfbcff"
+./task-01-design-system/design-system/color.styles.tokens.json:1852:          "$value": "#b69df7"
+./task-01-design-system/design-system/color.styles.tokens.json:1856:          "$value": "#9a83db"
+./task-01-design-system/design-system/color.styles.tokens.json:1860:          "$value": "#8069bf"
+./task-01-design-system/design-system/color.styles.tokens.json:1864:          "$value": "#6750a4"
+./task-01-design-system/design-system/color.styles.tokens.json:1868:          "$value": "#5b4397"
+./task-01-design-system/design-system/color.styles.tokens.json:1872:          "$value": "#4f378a"
+./task-01-design-system/design-system/color.styles.tokens.json:1876:          "$value": "#432b7e"
+./task-01-design-system/design-system/color.styles.tokens.json:1880:          "$value": "#381e72"
+./task-01-design-system/design-system/color.styles.tokens.json:1884:          "$value": "#2d1067"
+./task-01-design-system/design-system/color.styles.tokens.json:1888:          "$value": "#22005d"
+./task-01-design-system/design-system/color.styles.tokens.json:1892:          "$value": "#160041"
+./task-01-design-system/design-system/color.styles.tokens.json:1896:          "$value": "#000000"
+./task-01-design-system/design-system/color.styles.tokens.json:1902:          "$value": "#ffffff"
+./task-01-design-system/design-system/color.styles.tokens.json:1906:          "$value": "#fffbff"
+./task-01-design-system/design-system/color.styles.tokens.json:1910:          "$value": "#fdf7ff"
+./task-01-design-system/design-system/color.styles.tokens.json:1914:          "$value": "#f6eeff"
+./task-01-design-system/design-system/color.styles.tokens.json:1918:          "$value": "#e8def9"
+./task-01-design-system/design-system/color.styles.tokens.json:1922:          "$value": "#ccc2dc"
+./task-01-design-system/design-system/color.styles.tokens.json:1926:          "$value": "#b0a7c0"
+./task-01-design-system/design-system/color.styles.tokens.json:1930:          "$value": "#958da5"
+./task-01-design-system/design-system/color.styles.tokens.json:1934:          "$value": "#7b738b"
+./task-01-design-system/design-system/color.styles.tokens.json:1938:          "$value": "#625b71"
+./task-01-design-system/design-system/color.styles.tokens.json:1942:          "$value": "#564f65"
+./task-01-design-system/design-system/color.styles.tokens.json:1946:          "$value": "#4a4459"
+./task-01-design-system/design-system/color.styles.tokens.json:1950:          "$value": "#3e384d"
+./task-01-design-system/design-system/color.styles.tokens.json:1954:          "$value": "#332d41"
+./task-01-design-system/design-system/color.styles.tokens.json:1958:          "$value": "#282336"
+./task-01-design-system/design-system/color.styles.tokens.json:1962:          "$value": "#1e192b"
+./task-01-design-system/design-system/color.styles.tokens.json:1966:          "$value": "#130e20"
+./task-01-design-system/design-system/color.styles.tokens.json:1970:          "$value": "#000000"
+./task-01-design-system/design-system/color.styles.tokens.json:1976:          "$value": "#ffffff"
+./task-01-design-system/design-system/color.styles.tokens.json:1980:          "$value": "#fffbff"
+./task-01-design-system/design-system/color.styles.tokens.json:1984:          "$value": "#fff8f8"
+./task-01-design-system/design-system/color.styles.tokens.json:1988:          "$value": "#ffecf0"
+./task-01-design-system/design-system/color.styles.tokens.json:1992:          "$value": "#ffd9e3"
+./task-01-design-system/design-system/color.styles.tokens.json:1996:          "$value": "#efb8c8"
+./task-01-design-system/design-system/color.styles.tokens.json:2000:          "$value": "#d29dac"
+./task-01-design-system/design-system/color.styles.tokens.json:2004:          "$value": "#b58392"
+./task-01-design-system/design-system/color.styles.tokens.json:2008:          "$value": "#996a78"
+./task-01-design-system/design-system/color.styles.tokens.json:2012:          "$value": "#7e5260"
+./task-01-design-system/design-system/color.styles.tokens.json:2016:          "$value": "#704654"
+./task-01-design-system/design-system/color.styles.tokens.json:2020:          "$value": "#633b48"
+./task-01-design-system/design-system/color.styles.tokens.json:2024:          "$value": "#56303d"
+./task-01-design-system/design-system/color.styles.tokens.json:2028:          "$value": "#4a2532"
+./task-01-design-system/design-system/color.styles.tokens.json:2032:          "$value": "#3d1b27"
+./task-01-design-system/design-system/color.styles.tokens.json:2036:          "$value": "#31101d"
+./task-01-design-system/design-system/color.styles.tokens.json:2040:          "$value": "#240612"
+./task-01-design-system/design-system/color.styles.tokens.json:2044:          "$value": "#000000"
+./task-01-design-system/design-system/color.styles.tokens.json:2050:          "$value": "#ffffff"
+./task-01-design-system/design-system/color.styles.tokens.json:2054:          "$value": "#fffbff"
+./task-01-design-system/design-system/color.styles.tokens.json:2058:          "$value": "#fff8f7"
+./task-01-design-system/design-system/color.styles.tokens.json:2062:          "$value": "#ffedeb"
+./task-01-design-system/design-system/color.styles.tokens.json:2066:          "$value": "#ffdad7"
+./task-01-design-system/design-system/color.styles.tokens.json:2070:          "$value": "#ffb3ad"
+./task-01-design-system/design-system/color.styles.tokens.json:2074:          "$value": "#ff8981"
+./task-01-design-system/design-system/color.styles.tokens.json:2078:          "$value": "#e66a63"
+./task-01-design-system/design-system/color.styles.tokens.json:2082:          "$value": "#c5524c"
+./task-01-design-system/design-system/color.styles.tokens.json:2086:          "$value": "#a53a36"
+./task-01-design-system/design-system/color.styles.tokens.json:2090:          "$value": "#952e2b"
+./task-01-design-system/design-system/color.styles.tokens.json:2094:          "$value": "#852221"
+./task-01-design-system/design-system/color.styles.tokens.json:2098:          "$value": "#751617"
+./task-01-design-system/design-system/color.styles.tokens.json:2102:          "$value": "#65090e"
+./task-01-design-system/design-system/color.styles.tokens.json:2106:          "$value": "#540006"
+./task-01-design-system/design-system/color.styles.tokens.json:2110:          "$value": "#410004"
+./task-01-design-system/design-system/color.styles.tokens.json:2114:          "$value": "#2d0002"
+./task-01-design-system/design-system/color.styles.tokens.json:2118:          "$value": "#000000"
+./task-01-design-system/design-system/color.styles.tokens.json:2124:          "$value": "#ffffff"
+./task-01-design-system/design-system/color.styles.tokens.json:2128:          "$value": "#fffbff"
+./task-01-design-system/design-system/color.styles.tokens.json:2132:          "$value": "#fdf8f8"
+./task-01-design-system/design-system/color.styles.tokens.json:2136:          "$value": "#f4f0ef"
+./task-01-design-system/design-system/color.styles.tokens.json:2140:          "$value": "#e5e1e1"
+./task-01-design-system/design-system/color.styles.tokens.json:2144:          "$value": "#c9c6c5"
+./task-01-design-system/design-system/color.styles.tokens.json:2148:          "$value": "#adaaaa"
+./task-01-design-system/design-system/color.styles.tokens.json:2152:          "$value": "#939090"
+./task-01-design-system/design-system/color.styles.tokens.json:2156:          "$value": "#797676"
+./task-01-design-system/design-system/color.styles.tokens.json:2160:          "$value": "#605e5e"
+./task-01-design-system/design-system/color.styles.tokens.json:2164:          "$value": "#545252"
+./task-01-design-system/design-system/color.styles.tokens.json:2168:          "$value": "#484646"
+./task-01-design-system/design-system/color.styles.tokens.json:2172:          "$value": "#3c3b3b"
+./task-01-design-system/design-system/color.styles.tokens.json:2176:          "$value": "#313030"
+./task-01-design-system/design-system/color.styles.tokens.json:2180:          "$value": "#262526"
+./task-01-design-system/design-system/color.styles.tokens.json:2184:          "$value": "#1c1b1c"
+./task-01-design-system/design-system/color.styles.tokens.json:2188:          "$value": "#111111"
+./task-01-design-system/design-system/color.styles.tokens.json:2192:          "$value": "#000000"
+./task-01-design-system/design-system/color.styles.tokens.json:2198:          "$value": "#ffffff"
+./task-01-design-system/design-system/color.styles.tokens.json:2202:          "$value": "#fffbff"
+./task-01-design-system/design-system/color.styles.tokens.json:2206:          "$value": "#fdf8f9"
+./task-01-design-system/design-system/color.styles.tokens.json:2210:          "$value": "#f4f0f0"
+./task-01-design-system/design-system/color.styles.tokens.json:2214:          "$value": "#e6e1e2"
+./task-01-design-system/design-system/color.styles.tokens.json:2218:          "$value": "#c9c5c6"
+./task-01-design-system/design-system/color.styles.tokens.json:2222:          "$value": "#aeaaab"
+./task-01-design-system/design-system/color.styles.tokens.json:2226:          "$value": "#939091"
+./task-01-design-system/design-system/color.styles.tokens.json:2230:          "$value": "#797677"
+./task-01-design-system/design-system/color.styles.tokens.json:2234:          "$value": "#605e5f"
+./task-01-design-system/design-system/color.styles.tokens.json:2238:          "$value": "#545253"
+./task-01-design-system/design-system/color.styles.tokens.json:2242:          "$value": "#484647"
+./task-01-design-system/design-system/color.styles.tokens.json:2246:          "$value": "#3c3b3c"
+./task-01-design-system/design-system/color.styles.tokens.json:2250:          "$value": "#313031"
+./task-01-design-system/design-system/color.styles.tokens.json:2254:          "$value": "#262526"
+./task-01-design-system/design-system/color.styles.tokens.json:2258:          "$value": "#1c1b1c"
+./task-01-design-system/design-system/color.styles.tokens.json:2262:          "$value": "#111112"
+./task-01-design-system/design-system/color.styles.tokens.json:2266:          "$value": "#000000"
+./task-01-design-system/design-system/color.styles.tokens.json:2273:        "$value": "#6750a4"
+./task-01-design-system/design-system/color.styles.tokens.json:2277:        "$value": "#958da5"
+./task-01-design-system/design-system/color.styles.tokens.json:2281:        "$value": "#b58392"
+./task-01-design-system/design-system/color.styles.tokens.json:2285:        "$value": "#e46962"
+./task-01-design-system/design-system/color.styles.tokens.json:2289:        "$value": "#938f96"
+./task-01-design-system/design-system/color.styles.tokens.json:2293:        "$value": "#938f99"
+./task-01-design-system/design-system/color.styles.tokens.json:2300:        "$value": "#6750a4"
+./task-01-design-system/design-system/effect.styles.tokens.json:10:        "color": "#c2410c1f"
+./task-01-design-system/design-system/effect.styles.tokens.json:22:        "color": "#c2410c33"
+./task-01-design-system/design-system/effect.styles.tokens.json:34:        "color": "#c2410c47"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:5:      "$value": "#c2410c"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:9:      "$value": "#8a5642"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:13:      "$value": "#eda082"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:17:      "$value": "#827571"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:21:      "$value": "#85736d"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:25:      "$value": "#dc2626"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:29:      "$value": "#d97706"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:33:      "$value": "#16a34a"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:40:        "$value": "#000000"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:44:        "$value": "#390c00"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:48:        "$value": "#5d1800"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:52:        "$value": "#832600"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:56:        "$value": "#d04b17"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:60:        "$value": "#d04b17"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:64:        "$value": "#f26330"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:68:        "$value": "#ff8b64"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:72:        "$value": "#ffb59d"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:76:        "$value": "#ffdbd0"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:80:        "$value": "#ffede8"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:84:        "$value": "#fff8f6"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:88:        "$value": "#fffbff"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:92:        "$value": "#ffffff"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:98:        "$value": "#000000"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:102:        "$value": "#341103"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:106:        "$value": "#4e2514"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:110:        "$value": "#693b28"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:114:        "$value": "#85513e"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:118:        "$value": "#a16954"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:122:        "$value": "#be826c"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:126:        "$value": "#dc9c85"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:130:        "$value": "#fab79e"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:134:        "$value": "#ffdbce"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:138:        "$value": "#ffede7"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:142:        "$value": "#fff8f6"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:146:        "$value": "#fffbff"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:150:        "$value": "#ffffff"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:156:        "$value": "#000000"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:160:        "$value": "#370e00"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:164:        "$value": "#53220d"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:168:        "$value": "#6f3721"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:172:        "$value": "#8b4e36"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:176:        "$value": "#a8664c"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:180:        "$value": "#c67f63"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:184:        "$value": "#e5997b"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:188:        "$value": "#ffb599"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:192:        "$value": "#ffdbce"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:196:        "$value": "#ffdbce"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:200:        "$value": "#fff8f6"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:204:        "$value": "#fffbff"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:208:        "$value": "#ffffff"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:214:        "$value": "#000000"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:218:        "$value": "#251915"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:222:        "$value": "#3b2d29"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:226:        "$value": "#53433e"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:230:        "$value": "#6b5b55"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:234:        "$value": "#85736d"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:238:        "$value": "#a08d86"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:242:        "$value": "#bba7a0"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:246:        "$value": "#d8c2bb"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:250:        "$value": "#f5ded6"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:254:        "$value": "#ffede7"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:258:        "$value": "#fff8f6"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:262:        "$value": "#fffbff"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:266:        "$value": "#ffffff"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:272:        "$value": "#000000"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:276:        "$value": "#251915"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:280:        "$value": "#3b2d29"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:284:        "$value": "#53433e"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:288:        "$value": "#6b5b55"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:292:        "$value": "#85736d"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:296:        "$value": "#a08d86"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:300:        "$value": "#bba7a0"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:304:        "$value": "#d8c2bb"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:308:        "$value": "#f5ded6"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:312:        "$value": "#ffede7"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:316:        "$value": "#fffbff"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:320:        "$value": "#fffbff"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:324:        "$value": "#ffffff"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:330:        "$value": "#000000"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:334:        "$value": "#410002"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:338:        "$value": "#690005"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:342:        "$value": "#93000b"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:346:        "$value": "#bf0715"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:350:        "$value": "#e42c2a"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:354:        "$value": "#ff544a"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:358:        "$value": "#ff897e"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:362:        "$value": "#ffb4ab"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:366:        "$value": "#fee2e2"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:370:        "$value": "#ffedea"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:374:        "$value": "#fff8f7"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:378:        "$value": "#fffbff"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:382:        "$value": "#ffffff"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:386:        "$value": "#ffffff"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:392:        "$value": "#000000"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:396:        "$value": "#2f1500"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:400:        "$value": "#4d2600"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:404:        "$value": "#6e3900"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:408:        "$value": "#904d00"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:412:        "$value": "#b56100"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:416:        "$value": "#d97707"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:420:        "$value": "#fa9129"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:424:        "$value": "#ffb77d"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:428:        "$value": "#ffdcc3"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:432:        "$value": "#fef3c7"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:436:        "$value": "#fff8f5"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:440:        "$value": "#fffbff"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:444:        "$value": "#ffffff"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:450:        "$value": "#000000"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:454:        "$value": "#002109"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:458:        "$value": "#003914"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:462:        "$value": "#005320"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:466:        "$value": "#006e2d"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:470:        "$value": "#008a3b"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:474:        "$value": "#1ca64d"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:478:        "$value": "#43c265"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:482:        "$value": "#62df7d"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:486:        "$value": "#7ffc97"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:490:        "$value": "#dcfce7"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:494:        "$value": "#ebffe7"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:498:        "$value": "#f6fff1"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:502:        "$value": "#ffffff"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:508:        "$value": "#000000"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:512:        "$value": "#140c0a"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:516:        "$value": "#19120f"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:520:        "$value": "#221a17"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:524:        "$value": "#261e1b"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:528:        "$value": "#312825"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:532:        "$value": "#3d332f"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:536:        "$value": "#382e2b"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:540:        "$value": "#413734"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:544:        "$value": "#f6e5e0"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:548:        "$value": "#fbeae5"
+./task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json:552:        "$value": "#fff1ec"
+./task-01-design-system/src/attendance-no-system.html:17:        radial-gradient(circle at 50% -10%, #dbeafe 0, transparent 42%),
+./task-01-design-system/src/attendance-no-system.html:18:        #f5f7fb;
+./task-01-design-system/src/attendance-no-system.html:19:      color: #0f172a;
+./task-01-design-system/src/attendance-no-system.html:66:      background: #2563eb;
+./task-01-design-system/src/attendance-no-system.html:67:      color: #ffffff;
+./task-01-design-system/src/attendance-no-system.html:73:      color: #0f172a;
+./task-01-design-system/src/attendance-no-system.html:80:      color: #64748b;
+./task-01-design-system/src/attendance-no-system.html:99:      border: 1px solid #cbd5e1;
+./task-01-design-system/src/attendance-no-system.html:101:      background: #ffffff;
+./task-01-design-system/src/attendance-no-system.html:102:      color: #475569;
+./task-01-design-system/src/attendance-no-system.html:107:      border-color: #2563eb;
+./task-01-design-system/src/attendance-no-system.html:108:      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.16);
+./task-01-design-system/src/attendance-no-system.html:119:      color: #0f172a;
+./task-01-design-system/src/attendance-no-system.html:144:      background: #2563eb;
+./task-01-design-system/src/attendance-no-system.html:145:      color: #ffffff;
+./task-01-design-system/src/attendance-no-system.html:148:    .btn-primary:hover { background: #1d4ed8; }
+./task-01-design-system/src/attendance-no-system.html:151:      border-color: #cbd5e1;
+./task-01-design-system/src/attendance-no-system.html:152:      background: #ffffff;
+./task-01-design-system/src/attendance-no-system.html:153:      color: #334155;
+./task-01-design-system/src/attendance-no-system.html:156:    .btn-secondary:hover { background: #f8fafc; }
+./task-01-design-system/src/attendance-no-system.html:174:      color: #2563eb;
+./task-01-design-system/src/attendance-no-system.html:184:      color: #0f172a;
+./task-01-design-system/src/attendance-no-system.html:194:      color: #475569;
+./task-01-design-system/src/attendance-no-system.html:205:      border: 1px solid #bfdbfe;
+./task-01-design-system/src/attendance-no-system.html:207:      background: #eff6ff;
+./task-01-design-system/src/attendance-no-system.html:208:      color: #1e40af;
+./task-01-design-system/src/attendance-no-system.html:218:      background: #16a34a;
+./task-01-design-system/src/attendance-no-system.html:229:      border: 1px solid #e2e8f0;
+./task-01-design-system/src/attendance-no-system.html:231:      background: #ffffff;
+./task-01-design-system/src/attendance-no-system.html:232:      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+./task-01-design-system/src/attendance-no-system.html:243:      border-bottom: 1px solid #e2e8f0;
+./task-01-design-system/src/attendance-no-system.html:260:      color: #64748b;
+./task-01-design-system/src/attendance-no-system.html:268:      border: 1px solid #cbd5e1;
+./task-01-design-system/src/attendance-no-system.html:271:      background: #f8fafc;
+./task-01-design-system/src/attendance-no-system.html:272:      color: #0f172a;
+./task-01-design-system/src/attendance-no-system.html:277:    .search input::placeholder { color: #94a3b8; }
+./task-01-design-system/src/attendance-no-system.html:280:      border-color: #2563eb;
+./task-01-design-system/src/attendance-no-system.html:281:      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.16);
+./task-01-design-system/src/attendance-no-system.html:296:      border-bottom: 1px solid #eef2f7;
+./task-01-design-system/src/attendance-no-system.html:315:      background: #dbeafe;
+./task-01-design-system/src/attendance-no-system.html:316:      color: #1e40af;
+./task-01-design-system/src/attendance-no-system.html:327:      color: #0f172a;
+./task-01-design-system/src/attendance-no-system.html:334:      color: #64748b;
+./task-01-design-system/src/attendance-no-system.html:343:      border: 1px solid #e2e8f0;
+./task-01-design-system/src/attendance-no-system.html:345:      background: #f1f5f9;
+./task-01-design-system/src/attendance-no-system.html:357:      color: #475569;
+./task-01-design-system/src/attendance-no-system.html:366:      background: #e2e8f0;
+./task-01-design-system/src/attendance-no-system.html:367:      color: #0f172a;
+./task-01-design-system/src/attendance-no-system.html:371:      outline: 2px solid #2563eb;
+./task-01-design-system/src/attendance-no-system.html:383:      background: #15803d;
+./task-01-design-system/src/attendance-no-system.html:384:      color: #ffffff;
+./task-01-design-system/src/attendance-no-system.html:388:      background: #b45309;
+./task-01-design-system/src/attendance-no-system.html:389:      color: #ffffff;
+./task-01-design-system/src/attendance-no-system.html:393:      background: #b91c1c;
+./task-01-design-system/src/attendance-no-system.html:394:      color: #ffffff;
+./task-01-design-system/src/attendance-no-system.html:401:      color: #64748b;
+./task-01-design-system/src/attendance-no-system.html:423:      color: #0f172a;
+./task-01-design-system/src/attendance-no-system.html:431:      color: #64748b;
+./task-01-design-system/src/attendance-no-system.html:442:      background: #f0fdf4;
+./task-01-design-system/src/attendance-no-system.html:443:      color: #15803d;
+./task-01-design-system/src/attendance-no-system.html:453:      background: #16a34a;
+./task-01-design-system/src/attendance-no-system.html:464:      border: 1px solid #e2e8f0;
+./task-01-design-system/src/attendance-no-system.html:466:      background: #f8fafc;
+./task-01-design-system/src/attendance-no-system.html:470:      border-color: #bbf7d0;
+./task-01-design-system/src/attendance-no-system.html:471:      background: #f0fdf4;
+./task-01-design-system/src/attendance-no-system.html:475:      border-color: #fde68a;
+./task-01-design-system/src/attendance-no-system.html:476:      background: #fffbeb;
+./task-01-design-system/src/attendance-no-system.html:480:      border-color: #fecaca;
+./task-01-design-system/src/attendance-no-system.html:481:      background: #fef2f2;
+./task-01-design-system/src/attendance-no-system.html:485:      border-color: #2563eb;
+./task-01-design-system/src/attendance-no-system.html:486:      background: #2563eb;
+./task-01-design-system/src/attendance-no-system.html:487:      color: #ffffff;
+./task-01-design-system/src/attendance-no-system.html:491:      color: #64748b;
+./task-01-design-system/src/attendance-no-system.html:496:    .stat-card.rate .stat-label { color: rgba(255, 255, 255, 0.82); }
+./task-01-design-system/src/attendance-no-system.html:500:      color: #0f172a;
+./task-01-design-system/src/attendance-no-system.html:506:    .stat-card.present .stat-value { color: #15803d; }
+./task-01-design-system/src/attendance-no-system.html:507:    .stat-card.late .stat-value { color: #b45309; }
+./task-01-design-system/src/attendance-no-system.html:508:    .stat-card.absent .stat-value { color: #b91c1c; }
+./task-01-design-system/src/attendance-no-system.html:509:    .stat-card.rate .stat-value { color: #ffffff; }
+./task-01-design-system/src/attendance-no-system.html:515:      color: #64748b;
+./task-01-design-system/src/attendance-no-system.html:530:      color: #64748b;
+./task-01-design-system/src/attendance-no-system.html:535:      color: #334155;
+./task-01-design-system/src/attendance-no-system.html:543:      background: #f1f5f9;
+./task-01-design-system/src/attendance-no-system.html:553:    .bar-row.present .bar-fill { background: #16a34a; }
+./task-01-design-system/src/attendance-no-system.html:554:    .bar-row.late .bar-fill { background: #f59e0b; }
+./task-01-design-system/src/attendance-no-system.html:555:    .bar-row.absent .bar-fill { background: #dc2626; }
+./task-01-design-system/src/attendance-no-system.html:564:      border-top: 1px solid #e2e8f0;
+./task-01-design-system/src/attendance-no-system.html:565:      color: #64748b;
+./task-01-design-system/src/attendance-no-system.html:579:      border: 1px solid #e2e8f0;
+./task-01-design-system/src/attendance-no-system.html:581:      background: #ffffff;
+./task-01-design-system/src/attendance-no-system.html:582:      color: #0f172a;
+./task-01-design-system/src/attendance-no-system.html:583:      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.14);
+comfortigbokoalexis@apples-MBP FreshFold % grep -RInE \
+--exclude-dir=node_modules \
+--exclude-dir=.git \
+--exclude-dir=.next \
+--exclude-dir=dist \
+--exclude-dir=build \
+--exclude='package-lock.json' \
+--exclude='pnpm-lock.yaml' \
+--exclude='yarn.lock' \
+'\b(red|blue|green|white|black|yellow|purple|orange|pink|gray|grey|transparent)\b' .
+./task-01-design-system/evidence/06-tokens-complete.json:1276:      "white": {
+./task-01-design-system/evidence/06-tokens-complete.json:1288:      "black": {
+./task-01-design-system/evidence/5-tokens-incomplete.json:1276:      "white": {
+./task-01-design-system/evidence/5-tokens-incomplete.json:1288:      "black": {
+./task-01-design-system/scripts/tokens-complete-to-css.js:50:    const red = parseInt(value.slice(1, 3), 16);
+./task-01-design-system/scripts/tokens-complete-to-css.js:51:    const green = parseInt(value.slice(3, 5), 16);
+./task-01-design-system/scripts/tokens-complete-to-css.js:52:    const blue = parseInt(value.slice(5, 7), 16);
+./task-01-design-system/scripts/tokens-complete-to-css.js:54:    return `rgba(${red}, ${green}, ${blue}, ${alpha})`;
+./task-01-design-system/scripts/tokens-to-css.js:50:    const red = parseInt(value.slice(1, 3), 16);
+./task-01-design-system/scripts/tokens-to-css.js:51:    const green = parseInt(value.slice(3, 5), 16);
+./task-01-design-system/scripts/tokens-to-css.js:52:    const blue = parseInt(value.slice(5, 7), 16);
+./task-01-design-system/scripts/tokens-to-css.js:54:    return `rgba(${red}, ${green}, ${blue}, ${alpha})`;
+./task-01-design-system/scripts/build-tokens.js:268:  const red = parseInt(digits.slice(0, 2), 16);
+./task-01-design-system/scripts/build-tokens.js:269:  const green = parseInt(digits.slice(2, 4), 16);
+./task-01-design-system/scripts/build-tokens.js:270:  const blue = parseInt(digits.slice(4, 6), 16);
+./task-01-design-system/scripts/build-tokens.js:272:  return `rgba(${red}, ${green}, ${blue}, ${alpha})`;
+./task-01-design-system/doc/colour-roles.md:171:#C2410C on white is still about 5:1, which passes WCAG AA for normal text.
+./task-01-design-system/doc/colour-roles.md:174:#006E2D). That is correct behavior. Use the 40 tones for filled buttons with white text and the 90 tones for containers.
+./task-01-design-system/doc/interview-answers.md:55:A token holds a colour. Contrast is a relationship between two colours in a particular place, at a particular size, in a particular state. A token system does not control which foreground a developer puts on which background. It also cannot see hover and disabled states, text over images or gradients, semi-transparent layers, or a user's forced colours and zoom settings. And contrast is only one part of accessibility.
+./task-01-design-system/doc/interview-answers.md:117:Generic output comes from averaging. A model has seen millions of interfaces. With nothing specific to go on, it produces the most probable one: a safe sans serif, a purple or blue gradient, rounded cards, a hero image, a chat box. Nobody chose those. They are the default.
+./task-01-design-system/doc/interview-answers.md:150:You can see the cost in the file. order.ready and payment.confirmed carry the same two hex values, typed twice. Changing that green means finding both. A second theme or brand would mean rewriting all 29 colour values, instead of repointing aliases. The font stack is also repeated inside seven text styles.
+./task-01-design-system/doc/interview-answers.md:152:What I would do instead: a palette tier of raw values, such as green.700 and green.100. Semantic tokens such as status.order.ready.fg would alias them. The font stack becomes one token that the text styles reference.
+./task-01-design-system/doc/interview-answers.md:167:A designer changes the green in Figma. The CSS file is a stale export. Order "Ready" and payment "Confirmed" share one green, so someone edits only one.
+./task-01-design-system/doc/interview-answers.md:168:A developer puts grey caption text on a green status chip. That pair was never tested.
+./task-01-design-system/doc/defects.md:61:- **Fix:** Resolve DS-01. Using `#c2410c` produces `5.18:1` with white and `4.93:1` against the light surface, clearing AA for normal text.
+./task-01-design-system/doc/defects.md:69:- **Impact:** Status UI cannot use a truthful success color through the design system. `attendance.html` uses `primary` for present, while `attendance-no-system.html` uses a real green. The two versions therefore communicate status differently.
+./task-01-design-system/design-system/color.styles.tokens.json:428:    "white": {
+./task-01-design-system/design-system/color.styles.tokens.json:432:    "black": {
+./task-01-design-system/src/attendance-no-system.html:17:        radial-gradient(circle at 50% -10%, #dbeafe 0, transparent 42%),
+./task-01-design-system/src/attendance-no-system.html:27:    button { -webkit-tap-highlight-color: transparent; }
+./task-01-design-system/src/attendance-no-system.html:37:      white-space: nowrap;
+./task-01-design-system/src/attendance-no-system.html:118:      background: transparent;
+./task-01-design-system/src/attendance-no-system.html:131:      border: 1px solid transparent;
+./task-01-design-system/src/attendance-no-system.html:326:      white-space: nowrap;
+./task-01-design-system/src/attendance-no-system.html:356:      background: transparent;
+./task-01-design-system/src/attendance.html:23:          color-mix(in srgb, var(--freshfold-color-primary) 9%, transparent) 0%,
+./task-01-design-system/src/attendance.html:24:          transparent 80%);
+./task-01-design-system/src/attendance.html:35:    button { -webkit-tap-highlight-color: transparent; }
+./task-01-design-system/src/attendance.html:45:      white-space: nowrap;
+./task-01-design-system/src/attendance.html:121:      box-shadow: 0 0 0 3px color-mix(in srgb, var(--freshfold-color-primary) 18%, transparent);
+./task-01-design-system/src/attendance.html:131:      background: transparent;
+./task-01-design-system/src/attendance.html:146:      border: 1px solid transparent;
+./task-01-design-system/src/attendance.html:311:      box-shadow: 0 0 0 3px color-mix(in srgb, var(--freshfold-color-primary) 18%, transparent);
+./task-01-design-system/src/attendance.html:358:      white-space: nowrap;
+./task-01-design-system/src/attendance.html:393:      background: transparent;
+./task-01-design-system/src/attendance.html:521:      border-color: transparent;
+./task-01-design-system/src/login.html:27:          color-mix(in srgb, var(--freshfold-color-primary) 8%, transparent) 0%,
+./task-01-design-system/src/login.html:28:          transparent 80%);
+./task-01-design-system/src/login.html:164:      box-shadow: 0 0 0 3px color-mix(in srgb, var(--freshfold-color-primary) 18%, transparent);
+./task-01-design-system/src/login.html:182:      background: transparent;
+./task-01-design-system/src/login.html:287:      border: 2px solid color-mix(in srgb, var(--freshfold-color-on-primary) 35%, transparent);
+comfortigbokoalexis@apples-MBP FreshFold % 
