@@ -1,0 +1,30 @@
+comfortigbokoalexis@apples-MacBook-Pro FreshFold % git status
+On branch experiment/broken-colour-token
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   task-01-design-system/design-system/Premitives vaules.Mode 1.tokens.json
+        modified:   task-01-design-system/evidence/06-tokens-complete.json
+        modified:   task-01-design-system/src/login.html
+        modified:   task-01-design-system/tokens-light.css
+        modified:   task-01-design-system/tokens.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+comfortigbokoalexis@apples-MacBook-Pro FreshFold % git add task-01-design-system
+comfortigbokoalexis@apples-MacBook-Pro FreshFold % git commit -m "Experiment: demonstrate broken colour token reference"
+[experiment/broken-colour-token 27af7dd] Experiment: demonstrate broken colour token reference
+ 5 files changed, 8 insertions(+), 8 deletions(-)
+comfortigbokoalexis@apples-MacBook-Pro FreshFold % git switch main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+comfortigbokoalexis@apples-MacBook-Pro FreshFold % git branch -D experiment/broken-colour-token
+Deleted branch experiment/broken-colour-token (was 27af7dd).
+comfortigbokoalexis@apples-MacBook-Pro FreshFold % git merge-base --is-ancestor 27af7dd main 
+echo $?
+1
+comfortigbokoalexis@apples-MacBook-Pro FreshFold % git log --oneline --graph --decorate -10
+* b92915e (HEAD -> main, origin/main) I want to push README.md, defects.md and interview-answers.md
+* f27a326 inititial folder setup and design sytem documentation
+comfortigbokoalexis@apples-MacBook-Pro FreshFold % git branch
+* main
+comfortigbokoalexis@apples-MacBook-Pro FreshFold % 
