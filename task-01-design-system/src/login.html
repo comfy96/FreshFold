@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fresh Fold — Sign In</title>
+  <meta name="description" content="Sign in to view your laundry orders, payments and collection status." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../tokens.css" />
+  <style>
+    /* ─── Reset ─────────────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ─── Page shell ─────────────────────────────────────────────────────── */
+    html, body { min-height: 100%; }
+
+    body {
+      display: grid;
+      place-items: center;
+      min-height: 100dvh;
+      padding: 24px 16px;
+      background-color: var(--freshfold-color-surface);
+      background-image:
+        radial-gradient(ellipse 60% 50% at 50% -10%,
+          color-mix(in srgb, var(--freshfold-color-primary) 8%, transparent) 0%,
+          transparent 80%);
+      color: var(--freshfold-color-on-surface);
+      font-family: var(--freshfold-type-body-large-font-family);
+      font-size: var(--freshfold-type-body-large-font-size);
+      font-weight: var(--freshfold-type-body-large-font-weight);
+      line-height: var(--freshfold-type-body-large-line-height);
+      letter-spacing: var(--freshfold-type-body-large-letter-spacing);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── Login card ─────────────────────────────────────────────────────── */
+    .login-card {
+      width: 100%;
+      max-width: 400px;
+      background-color: var(--freshfold-color-surface-container);
+      border: 1px solid var(--freshfold-color-outline-variant);
+      border-radius: 20px;
+      padding: 40px 32px 36px;
+      box-shadow: var(--freshfold-shadow-medium-shadow);
+      animation: card-rise 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    @keyframes card-rise {
+      from { opacity: 0; transform: translateY(18px) scale(0.98); }
+      to   { opacity: 1; transform: translateY(0)    scale(1);    }
+    }
+
+    /* ─── Brand ──────────────────────────────────────────────────────────── */
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+
+    .brand-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background-color: var(--freshfold-color-primary);
+      color: var(--freshfold-color-on-primary);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .brand-icon svg { width: 22px; height: 22px; }
+
+    .brand-name {
+      font-size: var(--freshfold-type-title-large-font-size);
+      font-weight: var(--freshfold-type-title-large-font-weight);
+      line-height: var(--freshfold-type-title-large-line-height);
+      letter-spacing: var(--freshfold-type-title-large-letter-spacing);
+      color: var(--freshfold-color-on-surface);
+    }
+
+    .brand-tagline {
+      font-size: var(--freshfold-type-label-medium-font-size);
+      font-weight: var(--freshfold-type-label-medium-font-weight);
+      line-height: var(--freshfold-type-label-medium-line-height);
+      color: var(--freshfold-color-on-surface-variant);
+      letter-spacing: var(--freshfold-type-label-medium-letter-spacing);
+    }
+
+    /* ─── Headings ───────────────────────────────────────────────────────── */
+    .login-heading {
+      font-size: var(--freshfold-type-headline-small-font-size);
+      font-weight: var(--freshfold-type-headline-small-font-weight);
+      line-height: var(--freshfold-type-headline-small-line-height);
+      letter-spacing: var(--freshfold-type-headline-small-letter-spacing);
+      color: var(--freshfold-color-on-surface);
+      margin-bottom: 6px;
+    }
+
+    .login-subheading {
+      font-size: var(--freshfold-type-body-medium-font-size);
+      font-weight: var(--freshfold-type-body-medium-font-weight);
+      line-height: var(--freshfold-type-body-medium-line-height);
+      letter-spacing: var(--freshfold-type-body-medium-letter-spacing);
+      color: var(--freshfold-color-on-surface-variant);
+      margin-bottom: 28px;
+    }
+
+    /* ─── Form ───────────────────────────────────────────────────────────── */
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 16px;
+    }
+
+    label {
+      font-size: var(--freshfold-type-label-large-font-size);
+      font-weight: var(--freshfold-type-label-large-font-weight);
+      line-height: var(--freshfold-type-label-large-line-height);
+      letter-spacing: var(--freshfold-type-label-large-letter-spacing);
+      color: var(--freshfold-color-on-surface-variant);
+    }
+
+    .input-wrap { position: relative; }
+
+    .input-wrap > svg {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+      color: var(--freshfold-color-on-surface-variant);
+      pointer-events: none;
+      transition: color 0.2s;
+    }
+
+    input[type="email"],
+    input[type="password"],
+    input[type="text"] {
+      width: 100%;
+      background-color: var(--freshfold-color-surface-container-high);
+      color: var(--freshfold-color-on-surface);
+      border: 1px solid var(--freshfold-color-outline-variant);
+      border-radius: 10px;
+      padding: 13px 14px 13px 42px;
+      font-family: var(--freshfold-type-body-large-font-family);
+      font-size: var(--freshfold-type-body-medium-font-size);
+      font-weight: var(--freshfold-type-body-medium-font-weight);
+      line-height: var(--freshfold-type-body-medium-line-height);
+      letter-spacing: var(--freshfold-type-body-medium-letter-spacing);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      -webkit-appearance: none;
+    }
+
+    input::placeholder { color: var(--freshfold-color-outline); }
+
+    input:focus {
+      border-color: var(--freshfold-color-primary);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--freshfold-color-primary) 18%, transparent);
+    }
+
+    .input-wrap:focus-within > svg { color: var(--freshfold-color-primary); }
+
+    .input-wrap.has-toggle input { padding-right: 46px; }
+
+    .toggle-password {
+      position: absolute;
+      right: 6px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border: none;
+      border-radius: 8px;
+      background: transparent;
+      color: var(--freshfold-color-on-surface-variant);
+      cursor: pointer;
+      transition: color 0.2s, background-color 0.2s;
+    }
+
+    .toggle-password:hover {
+      color: var(--freshfold-color-on-surface);
+      background-color: var(--freshfold-color-surface-container-highest);
+    }
+
+    .toggle-password svg { width: 18px; height: 18px; }
+
+    /* ─── Validation ─────────────────────────────────────────────────────── */
+    .field-error {
+      min-height: 16px;
+      font-size: var(--freshfold-type-body-small-font-size);
+      font-weight: var(--freshfold-type-body-small-font-weight);
+      line-height: var(--freshfold-type-body-small-line-height);
+      color: var(--freshfold-color-error);
+      letter-spacing: var(--freshfold-type-body-small-letter-spacing);
+    }
+
+    .form-group.invalid input { border-color: var(--freshfold-color-error); }
+
+    /* ─── Remember / forgot row ──────────────────────────────────────────── */
+    .form-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 4px 0 24px;
+    }
+
+    .checkbox {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      font-size: var(--freshfold-type-body-small-font-size);
+      font-weight: var(--freshfold-type-body-small-font-weight);
+      line-height: var(--freshfold-type-body-small-line-height);
+      letter-spacing: var(--freshfold-type-body-small-letter-spacing);
+      color: var(--freshfold-color-on-surface-variant);
+      user-select: none;
+    }
+
+    .checkbox input {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--freshfold-color-primary);
+      cursor: pointer;
+    }
+
+    .link {
+      border: none;
+      background: none;
+      padding: 0;
+      font-family: inherit;
+      font-size: var(--freshfold-type-body-small-font-size);
+      font-weight: var(--freshfold-type-label-large-font-weight);
+      line-height: var(--freshfold-type-body-small-line-height);
+      letter-spacing: var(--freshfold-type-body-small-letter-spacing);
+      color: var(--freshfold-color-primary);
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .link:hover { text-decoration: underline; }
+
+    /* ─── Primary button ─────────────────────────────────────────────────── */
+    .btn-primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 15px 24px;
+      background-color: var(--freshfold-color-primary);
+      color: var(--freshfold-color-on-primary);
+      border: none;
+      border-radius: 12px;
+      font-family: var(--freshfold-type-label-large-font-family);
+      font-size: var(--freshfold-type-label-large-font-size);
+      font-weight: var(--freshfold-type-label-large-font-weight);
+      line-height: var(--freshfold-type-label-large-line-height);
+      letter-spacing: var(--freshfold-type-label-large-letter-spacing);
+      cursor: pointer;
+      transition: opacity 0.15s, transform 0.12s;
+    }
+
+    .btn-primary:hover  { opacity: 0.88; }
+    .btn-primary:active { transform: scale(0.98); opacity: 0.9; }
+
+    .btn-primary:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn-primary svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+    .spinner {
+      width: 16px;
+      height: 16px;
+      border: 2px solid color-mix(in srgb, var(--freshfold-color-on-primary) 35%, transparent);
+      border-top-color: var(--freshfold-color-on-primary);
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      display: none;
+    }
+
+    .btn-primary.loading .spinner { display: block; }
+    .btn-primary.loading .btn-label,
+    .btn-primary.loading .btn-arrow { display: none; }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ─── Divider ────────────────────────────────────────────────────────── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 20px 0 14px;
+      color: var(--freshfold-color-outline);
+      font-size: var(--freshfold-type-label-medium-font-size);
+      font-weight: var(--freshfold-type-label-medium-font-weight);
+      line-height: var(--freshfold-type-label-medium-line-height);
+      letter-spacing: var(--freshfold-type-label-medium-letter-spacing);
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background-color: var(--freshfold-color-outline-variant);
+    }
+
+    /* ─── Help text ──────────────────────────────────────────────────────── */
+    .help-text {
+      text-align: center;
+      font-size: var(--freshfold-type-body-small-font-size);
+      font-weight: var(--freshfold-type-body-small-font-weight);
+      line-height: var(--freshfold-type-body-small-line-height);
+      letter-spacing: var(--freshfold-type-body-small-letter-spacing);
+      color: var(--freshfold-color-on-surface-variant);
+    }
+
+    /* ─── Status banner ──────────────────────────────────────────────────── */
+    .status {
+      display: none;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 20px;
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-size: var(--freshfold-type-body-small-font-size);
+      font-weight: var(--freshfold-type-body-small-font-weight);
+      line-height: var(--freshfold-type-body-small-line-height);
+      letter-spacing: var(--freshfold-type-body-small-letter-spacing);
+    }
+
+    .status.show { display: flex; }
+
+    .status svg { width: 16px; height: 16px; flex-shrink: 0; margin-top: 1px; }
+
+    .status.error {
+      background-color: var(--freshfold-color-error-container);
+      color: var(--freshfold-color-on-error-container);
+      border-left: 3px solid var(--freshfold-color-error);
+    }
+
+    .status.success {
+      background-color: var(--freshfold-color-surface-container-high);
+      color: var(--freshfold-color-on-surface);
+      border-left: 3px solid var(--freshfold-color-primary);
+    }
+
+    /* ─── Responsive ─────────────────────────────────────────────────────── */
+    @media (max-width: 440px) {
+      .login-card { padding: 32px 20px 28px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .login-card, .panel { animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="login-card" role="main">
+
+    <!-- Brand -->
+    <div class="brand">
+      <div class="brand-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 4a2 2 0 0 1 2 2v.5L22 17H2L10 6.5V6a2 2 0 0 1 2-2z"/>
+          <line x1="2" y1="17" x2="22" y2="17"/>
+        </svg>
+      </div>
+      <div>
+        <div class="brand-name">Fresh Fold</div>
+        <div class="brand-tagline">Laundry records, your phone</div>
+      </div>
+    </div>
+
+    <h1 class="login-heading">Welcome back</h1>
+    <p class="login-subheading">Sign in to view your orders, payments and collection status.</p>
+
+    <!-- Status banner -->
+    <div id="status" class="status" role="alert" aria-live="polite">
+      <svg id="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"></svg>
+      <span id="status-text"></span>
+    </div>
+
+    <form id="login-form" novalidate>
+      <!-- Email -->
+      <div class="form-group" id="group-email">
+        <label for="email">Email address</label>
+        <div class="input-wrap">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            autocomplete="email"
+            placeholder="you@example.com"
+            required
+          />
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 7-10 6L2 7"/>
+          </svg>
+        </div>
+        <p class="field-error" id="error-email"></p>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group" id="group-password">
+        <label for="password">Password</label>
+        <div class="input-wrap has-toggle">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            autocomplete="current-password"
+            placeholder="Enter your password"
+            required
+          />
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="11" width="18" height="11" rx="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+          <button type="button" class="toggle-password" id="toggle-password" aria-label="Show password" aria-pressed="false">
+            <svg id="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </button>
+        </div>
+        <p class="field-error" id="error-password"></p>
+      </div>
+
+      <!-- Remember / forgot -->
+      <div class="form-row">
+        <label class="checkbox">
+          <input type="checkbox" id="remember" name="remember" />
+          Remember me
+        </label>
+        <button type="button" class="link" id="forgot-link">Forgot password?</button>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" class="btn-primary" id="submit-btn">
+        <span class="btn-label">Sign in</span>
+        <span class="spinner" aria-hidden="true"></span>
+        <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </button>
+    </form>
+
+    <div class="divider" role="presentation">new to Fresh Fold?</div>
+
+    <p class="help-text">
+      Ask a member of staff to register your number.<br />
+      They will issue you an activation code.
+    </p>
+
+  </main>
+
+  <script>
+    (function () {
+      'use strict';
+
+      var form        = document.getElementById('login-form');
+      var emailInput  = document.getElementById('email');
+      var passInput   = document.getElementById('password');
+      var groupEmail  = document.getElementById('group-email');
+      var groupPass   = document.getElementById('group-password');
+      var errorEmail  = document.getElementById('error-email');
+      var errorPass   = document.getElementById('error-password');
+      var statusBox   = document.getElementById('status');
+      var statusText  = document.getElementById('status-text');
+      var statusIcon  = document.getElementById('status-icon');
+      var submitBtn   = document.getElementById('submit-btn');
+      var toggleBtn   = document.getElementById('toggle-password');
+      var eyeIcon     = document.getElementById('eye-icon');
+      var forgotLink  = document.getElementById('forgot-link');
+
+      var EYE_OPEN = '<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>';
+      var EYE_OFF  = '<path d="m3 3 18 18"/><path d="M10.6 10.6a2 2 0 0 0 2.8 2.8"/><path d="M9.9 5.2A10.9 10.9 0 0 1 12 5c6.5 0 10 7 10 7a17.8 17.8 0 0 1-3.2 4.2"/><path d="M6.1 6.1A17.6 17.6 0 0 0 2 12s3.5 7 10 7a10.6 10.6 0 0 0 4-.8"/>';
+      var ICON_ERROR = '<circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>';
+      var ICON_SUCCESS = '<path d="M22 11.1V12a10 10 0 1 1-5.9-9.1"/><polyline points="22 4 12 14.01 9 11.01"/>';
+
+      function showStatus(type, message) {
+        statusBox.className = 'status show ' + type;
+        statusText.textContent = message;
+        statusIcon.innerHTML = type === 'success' ? ICON_SUCCESS : ICON_ERROR;
+      }
+
+      function clearStatus() {
+        statusBox.className = 'status';
+        statusText.textContent = '';
+        statusIcon.innerHTML = '';
+      }
+
+      function setFieldError(group, errorEl, message) {
+        group.classList.toggle('invalid', Boolean(message));
+        errorEl.textContent = message || '';
+      }
+
+      function validateEmail(value) {
+        if (!value) return 'Enter your email address.';
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) return 'Enter a valid email address.';
+        return '';
+      }
+
+      function validatePassword(value) {
+        if (!value) return 'Enter your password.';
+        if (value.length < 8) return 'Password must be at least 8 characters.';
+        return '';
+      }
+
+      function validate() {
+        var emailError = validateEmail(emailInput.value.trim());
+        var passError = validatePassword(passInput.value);
+        setFieldError(groupEmail, errorEmail, emailError);
+        setFieldError(groupPass, errorPass, passError);
+        return !emailError && !passError;
+      }
+
+      // Live re-validation once a field has been touched
+      emailInput.addEventListener('blur', function () {
+        if (emailInput.value.trim()) {
+          setFieldError(groupEmail, errorEmail, validateEmail(emailInput.value.trim()));
+        }
+      });
+      passInput.addEventListener('blur', function () {
+        if (passInput.value) {
+          setFieldError(groupPass, errorPass, validatePassword(passInput.value));
+        }
+      });
+      [emailInput, passInput].forEach(function (input) {
+        input.addEventListener('input', clearStatus);
+      });
+
+      // Password visibility toggle
+      toggleBtn.addEventListener('click', function () {
+        var show = passInput.type === 'password';
+        passInput.type = show ? 'text' : 'password';
+        toggleBtn.setAttribute('aria-pressed', String(show));
+        toggleBtn.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
+        eyeIcon.innerHTML = show ? EYE_OFF : EYE_OPEN;
+        passInput.focus();
+      });
+
+      // Forgot password placeholder
+      forgotLink.addEventListener('click', function () {
+        showStatus('error', 'Password resets are handled in the shop. Please ask a member of staff for help.');
+      });
+
+      // Submit
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        clearStatus();
+
+        if (!validate()) {
+          var firstInvalid = form.querySelector('.form-group.invalid input');
+          if (firstInvalid) firstInvalid.focus();
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.classList.add('loading');
+
+        // Demo only. A real app posts the credentials to the server over HTTPS.
+        window.setTimeout(function () {
+          submitBtn.disabled = false;
+          submitBtn.classList.remove('loading');
+          showStatus('success', 'Signed in (demo). A real app would now open your orders.');
+        }, 900);
+      });
+    })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+{
+  "name": "Design Tokens",
+  "collections": {
+    "Premitives vaules": {
+      "modes": {
+        "Mode 1": [
+          "Premitives vaules.Mode 1.tokens.json"
+        ]
+      }
+    },
+    "Color Roles": {
+      "modes": {
+        "Light": [
+          "Color Roles.Light.tokens.json"
+        ],
+        "Dark": [
+          "Color Roles.Dark.tokens.json"
+        ]
+      }
+    }
+  },
+  "styles": {
+    "text": [
+      "text.styles.tokens.json"
+    ],
+    "effect": [
+      "effect.styles.tokens.json"
+    ],
+    "color": [
+      "color.styles.tokens.json"
+    ]
+  }
+}

@@ -1,0 +1,140 @@
+/**
+ * tokens.css
+ *
+ * AUTO-GENERATED FILE. DO NOT EDIT.
+ *
+ * Source: task-01-design-system/evidence/06-tokens-complete.json
+ * Generator: node task-01-design-system/scripts/build-tokens.js
+ *
+ * Primitive palette values are resolved during compilation and are never
+ * exposed as CSS variables. Components may only consume semantic roles.
+ */
+
+:root {
+  /* Semantic color roles. */
+  --freshfold-color-primary: #ffb59d;
+  --freshfold-color-on-primary: #5d1800;
+  --freshfold-color-primary-container: #832600;
+  --freshfold-color-on-primary-container: #ffdbd0;
+  --freshfold-color-secondary: #fab79e;
+  --freshfold-color-on-secondary: #4e2514;
+  --freshfold-color-secondary-container: #693b28;
+  --freshfold-color-on-secondary-container: #ffdbce;
+  --freshfold-color-tertiary: #ffb599;
+  --freshfold-color-on-tertiary: #53220d;
+  --freshfold-color-tertiary-container: #6f3721;
+  --freshfold-color-on-tertiary-container: #ffdbce;
+  --freshfold-color-error: #ffb4ab;
+  --freshfold-color-on-error: #690005;
+  --freshfold-color-error-container: #93000b;
+  --freshfold-color-on-error-container: #fee2e2;
+  --freshfold-color-surface: #19120f;
+  --freshfold-color-on-surface: #f5ded6;
+  --freshfold-color-surface-variant: #53433e;
+  --freshfold-color-on-surface-variant: #d8c2bb;
+  --freshfold-color-surface-container-highest: #382e2b;
+  --freshfold-color-surface-container-high: #312825;
+  --freshfold-color-surface-container-low: #221a17;
+  --freshfold-color-surface-container: #261e1b;
+  --freshfold-color-surface-container-lowest: #140c0a;
+  --freshfold-color-inverse-surface: #f5ded6;
+  --freshfold-color-inverse-on-surface: #3b2d29;
+  --freshfold-color-surface-tint: #ffb59d;
+  --freshfold-color-outline: #a08d86;
+  --freshfold-color-outline-variant: #53433e;
+  --freshfold-color-primary-fixed: #ffb59d;
+  --freshfold-color-on-primary-fixed-variant: #5d1800;
+  --freshfold-color-on-primary-fixed-dim: #000000;
+  --freshfold-color-primary-fixed-dim: #f26330;
+  --freshfold-color-inverse-primary: #f26330;
+  --freshfold-color-secondary-fixed: #fab79e;
+  --freshfold-color-on-secondary-fixed: #000000;
+  --freshfold-color-secondary-fixed-dim: #be826c;
+  --freshfold-color-on-secondary-fixed-variant: #4e2514;
+  --freshfold-color-surface-bright: #413734;
+  --freshfold-color-tertiary-fixed: #ffb599;
+  --freshfold-color-on-tertiary-fixed: #000000;
+  --freshfold-color-on-tertiary-fixed-dim: #c67f63;
+  --freshfold-color-on-tertiary-fixed-variant: #53220d;
+  --freshfold-color-background: #19120f;
+  --freshfold-color-on-background: #f5ded6;
+  --freshfold-color-scrim: #251915;
+  --freshfold-color-shadow: #000000;
+
+  /* Typography. */
+  --freshfold-type-display-large-font-family: "Plus Jakarta Sans", sans-serif;
+  --freshfold-type-display-large-font-weight: 700;
+  --freshfold-type-display-large-font-size: 57px;
+  --freshfold-type-display-large-line-height: 80px;
+  --freshfold-type-display-large-letter-spacing: -0.25px;
+  --freshfold-type-display-medium-font-family: "Plus Jakarta Sans", sans-serif;
+  --freshfold-type-display-medium-font-weight: 700;
+  --freshfold-type-display-medium-font-size: 45px;
+  --freshfold-type-display-medium-line-height: 63px;
+  --freshfold-type-display-medium-letter-spacing: 0px;
+  --freshfold-type-display-small-font-family: "Plus Jakarta Sans", sans-serif;
+  --freshfold-type-display-small-font-weight: 600;
+  --freshfold-type-display-small-font-size: 36px;
+  --freshfold-type-display-small-line-height: 50px;
+  --freshfold-type-display-small-letter-spacing: 0px;
+  --freshfold-type-headline-small-font-family: "Plus Jakarta Sans", sans-serif;
+  --freshfold-type-headline-small-font-weight: 600;
+  --freshfold-type-headline-small-font-size: 24px;
+  --freshfold-type-headline-small-line-height: 33px;
+  --freshfold-type-headline-small-letter-spacing: 0px;
+  --freshfold-type-headline-medium-font-family: "Plus Jakarta Sans", sans-serif;
+  --freshfold-type-headline-medium-font-weight: 600;
+  --freshfold-type-headline-medium-font-size: 28px;
+  --freshfold-type-headline-medium-line-height: 39px;
+  --freshfold-type-headline-medium-letter-spacing: 0px;
+  --freshfold-type-title-large-font-family: "Plus Jakarta Sans", sans-serif;
+  --freshfold-type-title-large-font-weight: 600;
+  --freshfold-type-title-large-font-size: 22px;
+  --freshfold-type-title-large-line-height: 33px;
+  --freshfold-type-title-large-letter-spacing: 0px;
+  --freshfold-type-title-medium-font-family: "Plus Jakarta Sans", sans-serif;
+  --freshfold-type-title-medium-font-weight: 500;
+  --freshfold-type-title-medium-font-size: 16px;
+  --freshfold-type-title-medium-line-height: 24px;
+  --freshfold-type-title-medium-letter-spacing: 0.15px;
+  --freshfold-type-title-small-font-family: "Plus Jakarta Sans", sans-serif;
+  --freshfold-type-title-small-font-weight: 500;
+  --freshfold-type-title-small-font-size: 14px;
+  --freshfold-type-title-small-line-height: 21px;
+  --freshfold-type-title-small-letter-spacing: 0.1px;
+  --freshfold-type-body-large-font-family: "Plus Jakarta Sans", sans-serif;
+  --freshfold-type-body-large-font-weight: 400;
+  --freshfold-type-body-large-font-size: 16px;
+  --freshfold-type-body-large-line-height: 24px;
+  --freshfold-type-body-large-letter-spacing: 0.5px;
+  --freshfold-type-body-medium-font-family: "Plus Jakarta Sans", sans-serif;
+  --freshfold-type-body-medium-font-weight: 400;
+  --freshfold-type-body-medium-font-size: 14px;
+  --freshfold-type-body-medium-line-height: 21px;
+  --freshfold-type-body-medium-letter-spacing: 0.25px;
+  --freshfold-type-body-small-font-family: "Plus Jakarta Sans", sans-serif;
+  --freshfold-type-body-small-font-weight: 400;
+  --freshfold-type-body-small-font-size: 12px;
+  --freshfold-type-body-small-line-height: 18px;
+  --freshfold-type-body-small-letter-spacing: 0.4px;
+  --freshfold-type-label-large-font-family: "Plus Jakarta Sans", sans-serif;
+  --freshfold-type-label-large-font-weight: 500;
+  --freshfold-type-label-large-font-size: 14px;
+  --freshfold-type-label-large-line-height: 22px;
+  --freshfold-type-label-large-letter-spacing: 0.1px;
+  --freshfold-type-label-medium-font-family: "Plus Jakarta Sans", sans-serif;
+  --freshfold-type-label-medium-font-weight: 500;
+  --freshfold-type-label-medium-font-size: 12px;
+  --freshfold-type-label-medium-line-height: 19px;
+  --freshfold-type-label-medium-letter-spacing: 0.1px;
+  --freshfold-type-label-small-font-family: "Plus Jakarta Sans", sans-serif;
+  --freshfold-type-label-small-font-weight: 500;
+  --freshfold-type-label-small-font-size: 11px;
+  --freshfold-type-label-small-line-height: 18px;
+  --freshfold-type-label-small-letter-spacing: 0.5px;
+
+  /* Shadows. */
+  --freshfold-shadow-soft-shadow: 0px 4px 12px -2px rgba(194, 65, 12, 0.122);
+  --freshfold-shadow-medium-shadow: 0px 8px 24px -4px rgba(194, 65, 12, 0.2);
+  --freshfold-shadow-hard-shadow: 0px 16px 32px 0px rgba(194, 65, 12, 0.278);
+}

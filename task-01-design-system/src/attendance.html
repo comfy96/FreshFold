@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Attendance — Northfield Primary</title>
+  <meta name="description" content="Take daily attendance and review a live class report." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../tokens-light.css" />
+  <style>
+    :root { color-scheme: light; }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100dvh;
+      background-color: var(--freshfold-color-surface);
+      background-image:
+        radial-gradient(ellipse 55% 45% at 50% -12%,
+          color-mix(in srgb, var(--freshfold-color-primary) 9%, transparent) 0%,
+          transparent 80%);
+      color: var(--freshfold-color-on-surface);
+      font-family: var(--freshfold-type-body-large-font-family);
+      font-size: var(--freshfold-type-body-large-font-size);
+      font-weight: var(--freshfold-type-body-large-font-weight);
+      line-height: var(--freshfold-type-body-large-line-height);
+      letter-spacing: var(--freshfold-type-body-large-letter-spacing);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    button, input, select { font: inherit; }
+    button { -webkit-tap-highlight-color: transparent; }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .app-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 24px 20px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-icon {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      flex-shrink: 0;
+      border-radius: 12px;
+      background-color: var(--freshfold-color-primary);
+      color: var(--freshfold-color-on-primary);
+      box-shadow: var(--freshfold-shadow-soft-shadow);
+    }
+
+    .brand-icon svg { width: 22px; height: 22px; }
+
+    .brand-name {
+      font-family: var(--freshfold-type-title-medium-font-family);
+      font-size: var(--freshfold-type-title-medium-font-size);
+      font-weight: var(--freshfold-type-title-medium-font-weight);
+      line-height: var(--freshfold-type-title-medium-line-height);
+      letter-spacing: var(--freshfold-type-title-medium-letter-spacing);
+      color: var(--freshfold-color-on-surface);
+    }
+
+    .brand-sub {
+      font-family: var(--freshfold-type-label-medium-font-family);
+      font-size: var(--freshfold-type-label-medium-font-size);
+      font-weight: var(--freshfold-type-label-medium-font-weight);
+      line-height: var(--freshfold-type-label-medium-line-height);
+      letter-spacing: var(--freshfold-type-label-medium-letter-spacing);
+      color: var(--freshfold-color-on-surface-variant);
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .date-control {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      min-height: 42px;
+      padding: 0 12px;
+      border: 1px solid var(--freshfold-color-outline-variant);
+      border-radius: 10px;
+      background-color: var(--freshfold-color-surface-container);
+      color: var(--freshfold-color-on-surface-variant);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .date-control:focus-within {
+      border-color: var(--freshfold-color-primary);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--freshfold-color-primary) 18%, transparent);
+    }
+
+    .date-control svg { width: 17px; height: 17px; flex-shrink: 0; }
+
+    .date-control input {
+      min-width: 132px;
+      padding: 0;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      color: var(--freshfold-color-on-surface);
+      font-family: var(--freshfold-type-body-medium-font-family);
+      font-size: var(--freshfold-type-body-medium-font-size);
+      font-weight: var(--freshfold-type-body-medium-font-weight);
+      letter-spacing: var(--freshfold-type-body-medium-letter-spacing);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 42px;
+      padding: 0 15px;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      font-family: var(--freshfold-type-label-large-font-family);
+      font-size: var(--freshfold-type-label-large-font-size);
+      font-weight: var(--freshfold-type-label-large-font-weight);
+      line-height: var(--freshfold-type-label-large-line-height);
+      letter-spacing: var(--freshfold-type-label-large-letter-spacing);
+      cursor: pointer;
+      transition: background-color 0.15s, border-color 0.15s, opacity 0.15s, transform 0.12s;
+    }
+
+    .btn:active { transform: scale(0.98); }
+    .btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+    .btn-primary {
+      background-color: var(--freshfold-color-primary);
+      color: var(--freshfold-color-on-primary);
+    }
+
+    .btn-primary:hover { opacity: 0.88; }
+
+    .btn-secondary {
+      border-color: var(--freshfold-color-outline-variant);
+      background-color: var(--freshfold-color-surface-container-high);
+      color: var(--freshfold-color-on-surface);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--freshfold-color-surface-container-highest);
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 34px 20px 64px;
+    }
+
+    .page-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .eyebrow {
+      font-family: var(--freshfold-type-label-medium-font-family);
+      font-size: var(--freshfold-type-label-medium-font-size);
+      font-weight: var(--freshfold-type-label-medium-font-weight);
+      line-height: var(--freshfold-type-label-medium-line-height);
+      letter-spacing: var(--freshfold-type-label-small-letter-spacing);
+      color: var(--freshfold-color-primary);
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 5px 0 0;
+      font-family: var(--freshfold-type-display-small-font-family);
+      font-size: var(--freshfold-type-display-small-font-size);
+      font-weight: var(--freshfold-type-display-small-font-weight);
+      line-height: var(--freshfold-type-display-small-line-height);
+      letter-spacing: var(--freshfold-type-display-small-letter-spacing);
+      color: var(--freshfold-color-on-surface);
+    }
+
+    .page-sub {
+      max-width: 58ch;
+      margin: 8px 0 0;
+      font-family: var(--freshfold-type-body-medium-font-family);
+      font-size: var(--freshfold-type-body-medium-font-size);
+      font-weight: var(--freshfold-type-body-medium-font-weight);
+      line-height: var(--freshfold-type-body-medium-line-height);
+      letter-spacing: var(--freshfold-type-body-medium-letter-spacing);
+      color: var(--freshfold-color-on-surface-variant);
+    }
+
+    .class-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 15px;
+      padding: 6px 11px;
+      border: 1px solid var(--freshfold-color-outline-variant);
+      border-radius: 999px;
+      background-color: var(--freshfold-color-surface-container);
+      font-family: var(--freshfold-type-label-medium-font-family);
+      font-size: var(--freshfold-type-label-medium-font-size);
+      font-weight: var(--freshfold-type-label-medium-font-weight);
+      line-height: var(--freshfold-type-label-medium-line-height);
+      letter-spacing: var(--freshfold-type-label-medium-letter-spacing);
+      color: var(--freshfold-color-on-surface-variant);
+    }
+
+    .class-badge::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: var(--freshfold-color-primary);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.75fr) minmax(290px, 0.75fr);
+      align-items: start;
+      gap: 20px;
+    }
+
+    .panel {
+      border: 1px solid var(--freshfold-color-outline-variant);
+      border-radius: 20px;
+      background-color: var(--freshfold-color-surface-container);
+      box-shadow: var(--freshfold-shadow-soft-shadow);
+      overflow: hidden;
+    }
+
+    .toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 17px 20px;
+      border-bottom: 1px solid var(--freshfold-color-outline-variant);
+    }
+
+    .search {
+      position: relative;
+      flex: 1;
+      max-width: 310px;
+      min-width: 190px;
+    }
+
+    .search svg {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      width: 16px;
+      height: 16px;
+      transform: translateY(-50%);
+      color: var(--freshfold-color-on-surface-variant);
+      pointer-events: none;
+    }
+
+    .search input {
+      width: 100%;
+      min-height: 40px;
+      padding: 0 12px 0 37px;
+      border: 1px solid var(--freshfold-color-outline-variant);
+      border-radius: 10px;
+      outline: 0;
+      background-color: var(--freshfold-color-surface-container-low);
+      color: var(--freshfold-color-on-surface);
+      font-family: var(--freshfold-type-body-medium-font-family);
+      font-size: var(--freshfold-type-body-medium-font-size);
+      font-weight: var(--freshfold-type-body-medium-font-weight);
+      letter-spacing: var(--freshfold-type-body-medium-letter-spacing);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .search input::placeholder { color: var(--freshfold-color-outline); }
+
+    .search input:focus {
+      border-color: var(--freshfold-color-primary);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--freshfold-color-primary) 18%, transparent);
+    }
+
+    .student-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .student-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--freshfold-color-outline-variant);
+    }
+
+    .student-row:last-child { border-bottom: 0; }
+
+    .student-main {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .avatar {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      flex-shrink: 0;
+      border-radius: 11px;
+      background-color: var(--freshfold-color-primary-container);
+      color: var(--freshfold-color-on-primary-container);
+      font-family: var(--freshfold-type-label-large-font-family);
+      font-size: var(--freshfold-type-label-large-font-size);
+      font-weight: var(--freshfold-type-label-large-font-weight);
+      letter-spacing: var(--freshfold-type-label-large-letter-spacing);
+    }
+
+    .student-copy { min-width: 0; }
+
+    .student-name {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-family: var(--freshfold-type-title-small-font-family);
+      font-size: var(--freshfold-type-title-small-font-size);
+      font-weight: var(--freshfold-type-title-small-font-weight);
+      line-height: var(--freshfold-type-title-small-line-height);
+      letter-spacing: var(--freshfold-type-title-small-letter-spacing);
+      color: var(--freshfold-color-on-surface);
+    }
+
+    .student-meta {
+      font-family: var(--freshfold-type-body-small-font-family);
+      font-size: var(--freshfold-type-body-small-font-size);
+      font-weight: var(--freshfold-type-body-small-font-weight);
+      line-height: var(--freshfold-type-body-small-line-height);
+      letter-spacing: var(--freshfold-type-body-small-letter-spacing);
+      color: var(--freshfold-color-on-surface-variant);
+    }
+
+    .status-group {
+      display: flex;
+      gap: 2px;
+      padding: 3px;
+      border: 1px solid var(--freshfold-color-outline-variant);
+      border-radius: 10px;
+      background-color: var(--freshfold-color-surface-container-low);
+    }
+
+    .status-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      padding: 6px 9px;
+      border: 0;
+      border-radius: 7px;
+      background: transparent;
+      color: var(--freshfold-color-on-surface-variant);
+      font-family: var(--freshfold-type-label-medium-font-family);
+      font-size: var(--freshfold-type-label-medium-font-size);
+      font-weight: var(--freshfold-type-label-medium-font-weight);
+      line-height: var(--freshfold-type-label-medium-line-height);
+      letter-spacing: var(--freshfold-type-label-medium-letter-spacing);
+      cursor: pointer;
+      transition: background-color 0.15s, color 0.15s;
+    }
+
+    .status-btn:hover {
+      background-color: var(--freshfold-color-surface-container-highest);
+      color: var(--freshfold-color-on-surface);
+    }
+
+    .status-btn:focus-visible {
+      outline: 2px solid var(--freshfold-color-primary);
+      outline-offset: 2px;
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: currentColor;
+    }
+
+    .status-btn[data-status="present"][aria-pressed="true"] {
+      background-color: var(--freshfold-color-primary);
+      color: var(--freshfold-color-on-primary);
+    }
+
+    .status-btn[data-status="late"][aria-pressed="true"] {
+      background-color: var(--freshfold-color-secondary);
+      color: var(--freshfold-color-on-secondary);
+    }
+
+    .status-btn[data-status="absent"][aria-pressed="true"] {
+      background-color: var(--freshfold-color-error);
+      color: var(--freshfold-color-on-error);
+    }
+
+    .empty {
+      display: none;
+      padding: 34px 20px;
+      text-align: center;
+      font-family: var(--freshfold-type-body-medium-font-family);
+      font-size: var(--freshfold-type-body-medium-font-size);
+      font-weight: var(--freshfold-type-body-medium-font-weight);
+      line-height: var(--freshfold-type-body-medium-line-height);
+      letter-spacing: var(--freshfold-type-body-medium-letter-spacing);
+      color: var(--freshfold-color-on-surface-variant);
+    }
+
+    .empty.show { display: block; }
+
+    .report-panel {
+      position: sticky;
+      top: 20px;
+      padding: 22px;
+    }
+
+    .report-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .report-title {
+      margin: 0;
+      font-family: var(--freshfold-type-title-medium-font-family);
+      font-size: var(--freshfold-type-title-medium-font-size);
+      font-weight: var(--freshfold-type-title-medium-font-weight);
+      line-height: var(--freshfold-type-title-medium-line-height);
+      letter-spacing: var(--freshfold-type-title-medium-letter-spacing);
+      color: var(--freshfold-color-on-surface);
+    }
+
+    .report-date {
+      margin: 2px 0 0;
+      font-family: var(--freshfold-type-body-small-font-family);
+      font-size: var(--freshfold-type-body-small-font-size);
+      font-weight: var(--freshfold-type-body-small-font-weight);
+      line-height: var(--freshfold-type-body-small-line-height);
+      letter-spacing: var(--freshfold-type-body-small-letter-spacing);
+      color: var(--freshfold-color-on-surface-variant);
+    }
+
+    .live-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background-color: var(--freshfold-color-surface-container-high);
+      font-family: var(--freshfold-type-label-small-font-family);
+      font-size: var(--freshfold-type-label-small-font-size);
+      font-weight: var(--freshfold-type-label-small-font-weight);
+      line-height: var(--freshfold-type-label-small-line-height);
+      letter-spacing: var(--freshfold-type-label-small-letter-spacing);
+      color: var(--freshfold-color-on-surface-variant);
+    }
+
+    .live-pill::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--freshfold-color-primary);
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .stat-card {
+      padding: 14px;
+      border: 1px solid var(--freshfold-color-outline-variant);
+      border-radius: 14px;
+      background-color: var(--freshfold-color-surface-container-high);
+    }
+
+    .stat-card.rate {
+      border-color: transparent;
+      background-color: var(--freshfold-color-primary-container);
+      color: var(--freshfold-color-on-primary-container);
+    }
+
+    .stat-label {
+      font-family: var(--freshfold-type-label-medium-font-family);
+      font-size: var(--freshfold-type-label-medium-font-size);
+      font-weight: var(--freshfold-type-label-medium-font-weight);
+      line-height: var(--freshfold-type-label-medium-line-height);
+      letter-spacing: var(--freshfold-type-label-medium-letter-spacing);
+      color: var(--freshfold-color-on-surface-variant);
+    }
+
+    .stat-card.rate .stat-label {
+      color: inherit;
+      opacity: 0.78;
+    }
+
+    .stat-value {
+      margin-top: 4px;
+      font-family: var(--freshfold-type-headline-small-font-family);
+      font-size: var(--freshfold-type-headline-small-font-size);
+      font-weight: var(--freshfold-type-headline-small-font-weight);
+      line-height: var(--freshfold-type-headline-small-line-height);
+      letter-spacing: var(--freshfold-type-headline-small-letter-spacing);
+      color: var(--freshfold-color-on-surface);
+    }
+
+    .stat-card.present .stat-value { color: var(--freshfold-color-primary); }
+    .stat-card.late .stat-value { color: var(--freshfold-color-secondary); }
+    .stat-card.absent .stat-value { color: var(--freshfold-color-error); }
+    .stat-card.rate .stat-value { color: inherit; }
+
+    .bars { margin-top: 24px; }
+
+    .bars-title {
+      margin: 0 0 13px;
+      font-family: var(--freshfold-type-label-medium-font-family);
+      font-size: var(--freshfold-type-label-medium-font-size);
+      font-weight: var(--freshfold-type-label-medium-font-weight);
+      line-height: var(--freshfold-type-label-medium-line-height);
+      letter-spacing: var(--freshfold-type-label-small-letter-spacing);
+      color: var(--freshfold-color-on-surface-variant);
+      text-transform: uppercase;
+    }
+
+    .bar-row + .bar-row { margin-top: 13px; }
+
+    .bar-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 6px;
+      font-family: var(--freshfold-type-body-small-font-family);
+      font-size: var(--freshfold-type-body-small-font-size);
+      font-weight: var(--freshfold-type-body-small-font-weight);
+      line-height: var(--freshfold-type-body-small-line-height);
+      letter-spacing: var(--freshfold-type-body-small-letter-spacing);
+      color: var(--freshfold-color-on-surface-variant);
+    }
+
+    .bar-head strong {
+      color: var(--freshfold-color-on-surface);
+      font-weight: var(--freshfold-type-label-medium-font-weight);
+    }
+
+    .bar-track {
+      height: 7px;
+      overflow: hidden;
+      border-radius: 999px;
+      background-color: var(--freshfold-color-surface-container-high);
+    }
+
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      border-radius: inherit;
+      transition: width 0.3s ease;
+    }
+
+    .bar-row.present .bar-fill { background-color: var(--freshfold-color-primary); }
+    .bar-row.late .bar-fill { background-color: var(--freshfold-color-secondary); }
+    .bar-row.absent .bar-fill { background-color: var(--freshfold-color-error); }
+
+    .report-footer {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 22px;
+      padding-top: 15px;
+      border-top: 1px solid var(--freshfold-color-outline-variant);
+      font-family: var(--freshfold-type-body-small-font-family);
+      font-size: var(--freshfold-type-body-small-font-size);
+      font-weight: var(--freshfold-type-body-small-font-weight);
+      line-height: var(--freshfold-type-body-small-line-height);
+      letter-spacing: var(--freshfold-type-body-small-letter-spacing);
+      color: var(--freshfold-color-on-surface-variant);
+    }
+
+    .report-footer span:last-child { text-align: right; }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 24px;
+      z-index: 20;
+      max-width: calc(100vw - 32px);
+      padding: 11px 15px;
+      border: 1px solid var(--freshfold-color-outline-variant);
+      border-radius: 10px;
+      background-color: var(--freshfold-color-surface-container-highest);
+      color: var(--freshfold-color-on-surface);
+      box-shadow: var(--freshfold-shadow-medium-shadow);
+      font-family: var(--freshfold-type-label-large-font-family);
+      font-size: var(--freshfold-type-label-large-font-size);
+      font-weight: var(--freshfold-type-label-large-font-weight);
+      line-height: var(--freshfold-type-label-large-line-height);
+      letter-spacing: var(--freshfold-type-label-large-letter-spacing);
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, 12px);
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: 1fr; }
+      .report-panel { position: static; }
+    }
+
+    @media (max-width: 640px) {
+      .app-bar { align-items: stretch; }
+      .top-actions { width: 100%; }
+      .date-control { flex: 1; }
+      .top-actions .btn { flex: 1; }
+      .page { padding-top: 26px; }
+      h1 { font-size: var(--freshfold-type-headline-medium-font-size); line-height: var(--freshfold-type-headline-medium-line-height); }
+      .toolbar { align-items: stretch; }
+      .search { max-width: none; }
+      .toolbar .btn { width: 100%; }
+      .student-row {
+        grid-template-columns: 1fr;
+        gap: 11px;
+        padding: 14px 16px;
+      }
+      .status-group { width: 100%; }
+      .status-btn { flex: 1; }
+      .report-panel { padding: 18px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="app-bar">
+    <div class="brand">
+      <div class="brand-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 10 12 5 2 10l10 5 10-5Z"/>
+          <path d="M6 12.5V17c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5"/>
+          <path d="M22 10v6"/>
+        </svg>
+      </div>
+      <div>
+        <div class="brand-name">Northfield Primary</div>
+        <div class="brand-sub">Attendance register</div>
+      </div>
+    </div>
+
+    <div class="top-actions">
+      <label class="date-control">
+        <span class="sr-only">Attendance date</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="5" width="18" height="16" rx="2"/>
+          <path d="M16 3v4M8 3v4M3 10h18"/>
+        </svg>
+        <input type="date" id="attendance-date" />
+      </label>
+      <button type="button" class="btn btn-primary" id="export-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <path d="m7 10 5 5 5-5"/>
+          <path d="M12 15V3"/>
+        </svg>
+        Export report
+      </button>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="page-header">
+      <div>
+        <div class="eyebrow">Daily summary</div>
+        <h1>Daily attendance</h1>
+        <p class="page-sub">Mark each learner present, late or absent. The class report updates as you go.</p>
+        <div class="class-badge">Year 5 · Cedar · 12 learners</div>
+      </div>
+    </div>
+
+    <div class="layout">
+      <section class="panel" aria-labelledby="register-title">
+        <div class="toolbar">
+          <div class="search">
+            <label class="sr-only" for="student-search">Search learners</label>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"/>
+              <path d="m20 20-3.5-3.5"/>
+            </svg>
+            <input type="search" id="student-search" placeholder="Search name or admission no." autocomplete="off" />
+          </div>
+          <button type="button" class="btn btn-secondary" id="mark-all-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m5 12 4 4L19 6"/>
+            </svg>
+            Mark all present
+          </button>
+        </div>
+
+        <h2 class="sr-only" id="register-title">Learner register</h2>
+        <ul class="student-list" id="student-list"></ul>
+        <div class="empty" id="empty-state">No learners match that search.</div>
+      </section>
+
+      <aside class="panel report-panel" aria-labelledby="report-title">
+        <div class="report-head">
+          <div>
+            <h2 class="report-title" id="report-title">Class report</h2>
+            <p class="report-date" id="report-date"></p>
+          </div>
+          <span class="live-pill">Live</span>
+        </div>
+
+        <div class="stat-grid">
+          <div class="stat-card present">
+            <div class="stat-label">Present</div>
+            <div class="stat-value" id="present-count">0</div>
+          </div>
+          <div class="stat-card late">
+            <div class="stat-label">Late</div>
+            <div class="stat-value" id="late-count">0</div>
+          </div>
+          <div class="stat-card absent">
+            <div class="stat-label">Absent</div>
+            <div class="stat-value" id="absent-count">0</div>
+          </div>
+          <div class="stat-card rate">
+            <div class="stat-label">Attendance</div>
+            <div class="stat-value" id="rate-value">0%</div>
+          </div>
+        </div>
+
+        <div class="bars">
+          <h3 class="bars-title">Breakdown</h3>
+
+          <div class="bar-row present">
+            <div class="bar-head"><span>Present</span><strong id="present-bar-label">0</strong></div>
+            <div class="bar-track" role="progressbar" aria-label="Present learners" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0">
+              <div class="bar-fill" id="present-bar"></div>
+            </div>
+          </div>
+
+          <div class="bar-row late">
+            <div class="bar-head"><span>Late</span><strong id="late-bar-label">0</strong></div>
+            <div class="bar-track" role="progressbar" aria-label="Late learners" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0">
+              <div class="bar-fill" id="late-bar"></div>
+            </div>
+          </div>
+
+          <div class="bar-row absent">
+            <div class="bar-head"><span>Absent</span><strong id="absent-bar-label">0</strong></div>
+            <div class="bar-track" role="progressbar" aria-label="Absent learners" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0">
+              <div class="bar-fill" id="absent-bar"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="report-footer">
+          <span id="attended-note">0 of 12 attended</span>
+          <span id="updated-note">Not saved yet</span>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    (function () {
+      'use strict';
+
+      var roster = [
+        { id: 'NF-2401', name: 'Amara Okafor', status: 'present' },
+        { id: 'NF-2402', name: 'Daniel Mensah', status: 'present' },
+        { id: 'NF-2403', name: 'Leila Hassan', status: 'late' },
+        { id: 'NF-2404', name: 'Noah Williams', status: 'absent' },
+        { id: 'NF-2405', name: 'Sofia Rossi', status: 'present' },
+        { id: 'NF-2406', name: 'Kwame Boateng', status: 'present' },
+        { id: 'NF-2407', name: 'Ava Thompson', status: 'present' },
+        { id: 'NF-2408', name: 'Ravi Patel', status: 'late' },
+        { id: 'NF-2409', name: 'Mia Chen', status: 'present' },
+        { id: 'NF-2410', name: 'Luca Hernandez', status: 'absent' },
+        { id: 'NF-2411', name: 'Zara Ahmed', status: 'present' },
+        { id: 'NF-2412', name: 'Ethan Brown', status: 'present' }
+      ];
+
+      var statuses = [
+        { value: 'present', label: 'Present' },
+        { value: 'late', label: 'Late' },
+        { value: 'absent', label: 'Absent' }
+      ];
+
+      var studentList = document.getElementById('student-list');
+      var emptyState = document.getElementById('empty-state');
+      var searchInput = document.getElementById('student-search');
+      var dateInput = document.getElementById('attendance-date');
+      var markAllBtn = document.getElementById('mark-all-btn');
+      var exportBtn = document.getElementById('export-btn');
+      var presentCount = document.getElementById('present-count');
+      var lateCount = document.getElementById('late-count');
+      var absentCount = document.getElementById('absent-count');
+      var rateValue = document.getElementById('rate-value');
+      var presentBar = document.getElementById('present-bar');
+      var lateBar = document.getElementById('late-bar');
+      var absentBar = document.getElementById('absent-bar');
+      var presentBarLabel = document.getElementById('present-bar-label');
+      var lateBarLabel = document.getElementById('late-bar-label');
+      var absentBarLabel = document.getElementById('absent-bar-label');
+      var reportDate = document.getElementById('report-date');
+      var attendedNote = document.getElementById('attended-note');
+      var updatedNote = document.getElementById('updated-note');
+      var toast = document.getElementById('toast');
+      var toastTimer;
+
+      function todayValue() {
+        var now = new Date();
+        var month = String(now.getMonth() + 1).padStart(2, '0');
+        var day = String(now.getDate()).padStart(2, '0');
+        return now.getFullYear() + '-' + month + '-' + day;
+      }
+
+      function displayDate(value) {
+        var parts = value.split('-');
+        var date = new Date(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2]));
+        return date.toLocaleDateString('en-GB', {
+          weekday: 'long',
+          day: 'numeric',
+          month: 'long',
+          year: 'numeric'
+        });
+      }
+
+      function initials(name) {
+        return name.split(' ').map(function (part) {
+          return part.charAt(0);
+        }).slice(0, 2).join('');
+      }
+
+      function statusLabel(value) {
+        return statuses.find(function (status) { return status.value === value; }).label;
+      }
+
+      function renderStudents() {
+        var query = searchInput.value.trim().toLowerCase();
+        var visible = roster.filter(function (student) {
+          return !query || student.name.toLowerCase().includes(query) || student.id.toLowerCase().includes(query);
+        });
+
+        studentList.innerHTML = visible.map(function (student) {
+          var buttons = statuses.map(function (status) {
+            return '<button type="button" class="status-btn" data-id="' + student.id + '" data-status="' + status.value + '" aria-pressed="' + (student.status === status.value) + '">' +
+              '<span class="status-dot" aria-hidden="true"></span>' + status.label +
+            '</button>';
+          }).join('');
+
+          return '<li class="student-row" data-id="' + student.id + '">' +
+            '<div class="student-main">' +
+              '<div class="avatar" aria-hidden="true">' + initials(student.name) + '</div>' +
+              '<div class="student-copy">' +
+                '<div class="student-name">' + student.name + '</div>' +
+                '<div class="student-meta">' + student.id + '</div>' +
+              '</div>' +
+            '</div>' +
+            '<div class="status-group" role="group" aria-label="Attendance status for ' + student.name + '">' + buttons + '</div>' +
+          '</li>';
+        }).join('');
+
+        emptyState.classList.toggle('show', visible.length === 0);
+      }
+
+      function setBar(bar, label, count, total) {
+        var width = total ? (count / total) * 100 : 0;
+        bar.style.width = width + '%';
+        label.textContent = count + (total ? ' · ' + Math.round(width) + '%' : '');
+        bar.parentElement.setAttribute('aria-valuenow', String(count));
+        bar.parentElement.setAttribute('aria-valuemax', String(total));
+      }
+
+      function renderReport() {
+        var total = roster.length;
+        var counts = { present: 0, late: 0, absent: 0 };
+
+        roster.forEach(function (student) { counts[student.status] += 1; });
+
+        var attended = counts.present + counts.late;
+        var rate = total ? Math.round((attended / total) * 100) : 0;
+
+        presentCount.textContent = counts.present;
+        lateCount.textContent = counts.late;
+        absentCount.textContent = counts.absent;
+        rateValue.textContent = rate + '%';
+
+        setBar(presentBar, presentBarLabel, counts.present, total);
+        setBar(lateBar, lateBarLabel, counts.late, total);
+        setBar(absentBar, absentBarLabel, counts.absent, total);
+
+        reportDate.textContent = displayDate(dateInput.value);
+        attendedNote.textContent = attended + ' of ' + total + ' attended';
+      }
+
+      function render() {
+        renderStudents();
+        renderReport();
+      }
+
+      function announce(message) {
+        window.clearTimeout(toastTimer);
+        toast.textContent = message;
+        toast.classList.add('show');
+        toastTimer = window.setTimeout(function () {
+          toast.classList.remove('show');
+        }, 2400);
+      }
+
+      function markUpdated() {
+        var time = new Date().toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+        updatedNote.textContent = 'Updated at ' + time;
+      }
+
+      function setStatus(id, status) {
+        var student = roster.find(function (item) { return item.id === id; });
+        if (!student || student.status === status) return;
+
+        student.status = status;
+        markUpdated();
+        render();
+        announce(student.name + ' marked ' + statusLabel(status).toLowerCase() + '.');
+
+        var nextButton = studentList.querySelector('[data-id="' + id + '"] .status-btn[data-status="' + status + '"]');
+        if (nextButton) nextButton.focus();
+      }
+
+      studentList.addEventListener('click', function (event) {
+        var button = event.target.closest('.status-btn');
+        if (!button) return;
+        setStatus(button.dataset.id, button.dataset.status);
+      });
+
+      searchInput.addEventListener('input', renderStudents);
+
+      dateInput.addEventListener('change', renderReport);
+
+      markAllBtn.addEventListener('click', function () {
+        var changed = roster.some(function (student) { return student.status !== 'present'; });
+        if (!changed) {
+          announce('Every learner is already marked present.');
+          return;
+        }
+
+        roster.forEach(function (student) { student.status = 'present'; });
+        markUpdated();
+        render();
+        announce('All learners marked present.');
+      });
+
+      exportBtn.addEventListener('click', function () {
+        var rows = [['Learner', 'Admission number', 'Status']];
+        roster.forEach(function (student) {
+          rows.push([student.name, student.id, statusLabel(student.status)]);
+        });
+
+        var csv = rows.map(function (row) {
+          return row.map(function (cell) {
+            return '"' + String(cell).replace(/"/g, '""') + '"';
+          }).join(',');
+        }).join('\r\n');
+
+        var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+        var url = URL.createObjectURL(blob);
+        var link = document.createElement('a');
+        link.href = url;
+        link.download = 'attendance-' + dateInput.value + '.csv';
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        URL.revokeObjectURL(url);
+        announce('Attendance report exported.');
+      });
+
+      dateInput.value = todayValue();
+      render();
+    })();
+  </script>
+
+</body>
+</html>

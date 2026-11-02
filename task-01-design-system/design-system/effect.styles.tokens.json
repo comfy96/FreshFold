@@ -1,0 +1,38 @@
+{
+  "Soft shadow": {
+    "$type": "shadow",
+    "$value": [
+      {
+        "offsetX": "0px",
+        "offsetY": "4px",
+        "blur": "12px",
+        "spread": "-2px",
+        "color": "#c2410c1f"
+      }
+    ]
+  },
+  "Medium Shadow": {
+    "$type": "shadow",
+    "$value": [
+      {
+        "offsetX": "0px",
+        "offsetY": "8px",
+        "blur": "24px",
+        "spread": "-4px",
+        "color": "#c2410c33"
+      }
+    ]
+  },
+  "Hard shadow": {
+    "$type": "shadow",
+    "$value": [
+      {
+        "offsetX": "0px",
+        "offsetY": "16px",
+        "blur": "32px",
+        "spread": "0px",
+        "color": "#c2410c47"
+      }
+    ]
+  }
+}

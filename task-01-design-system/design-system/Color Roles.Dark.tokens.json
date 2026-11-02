@@ -1,0 +1,194 @@
+{
+  "Primary_Color": {
+    "$type": "color",
+    "$value": "{color_pallets.primary.Primary_Color_80}"
+  },
+  "On_Primary_Color": {
+    "$type": "color",
+    "$value": "{color_pallets.primary.Primary_Color_20}"
+  },
+  "Primary_container_Color": {
+    "$type": "color",
+    "$value": "{color_pallets.primary.Primary_Color_30}"
+  },
+  "On_Primary_container_Color": {
+    "$type": "color",
+    "$value": "{color_pallets.primary.Primary_Color_90}"
+  },
+  "Secondary_Color": {
+    "$type": "color",
+    "$value": "{color_pallets.secondary.Secondary_Color_can_80}"
+  },
+  "On_secondary_Color": {
+    "$type": "color",
+    "$value": "{color_pallets.secondary.Secondary_Color_20}"
+  },
+  "Secondary_container_Color": {
+    "$type": "color",
+    "$value": "{color_pallets.secondary.Secondary_Color_30}"
+  },
+  "On_secondary_container_Color": {
+    "$type": "color",
+    "$value": "{color_pallets.secondary.Secondary_Color_90}"
+  },
+  "Tertiary_Color": {
+    "$type": "color",
+    "$value": "{color_pallets.Tertiary.Tertiary_Color_80}"
+  },
+  "On_tertiary_Color": {
+    "$type": "color",
+    "$value": "{color_pallets.Tertiary.Tertiary_Color_20}"
+  },
+  "tertiary_continer_Color": {
+    "$type": "color",
+    "$value": "{color_pallets.Tertiary.Tertiary_Color_30}"
+  },
+  "On_tertiary_container_Color_4": {
+    "$type": "color",
+    "$value": "{color_pallets.Tertiary.Tertiary_Color_90}"
+  },
+  "Error_Color": {
+    "$type": "color",
+    "$value": "{color_pallets.Error.Error_Color_80}"
+  },
+  "On_Error_Color": {
+    "$type": "color",
+    "$value": "{color_pallets.Error.Error_Color_20}"
+  },
+  "Error_container_Color": {
+    "$type": "color",
+    "$value": "{color_pallets.Error.Error_Color_30}"
+  },
+  "On_Error_container_Color": {
+    "$type": "color",
+    "$value": "{color_pallets.Error.Error_Color_90}"
+  },
+  "Surface_Color": {
+    "$type": "color",
+    "$value": "{color_pallets.Neutral_extended.Neutral_extended_6}"
+  },
+  "On_Surface_Color": {
+    "$type": "color",
+    "$value": "{color_pallets.Neutral.Nuetral_Color_90}"
+  },
+  "Surface_variant__Color": {
+    "$type": "color",
+    "$value": "{color_pallets.neutral_variant.Nuetral_variant_Color_30}"
+  },
+  "On_Surface_variant_Color": {
+    "$type": "color",
+    "$value": "{color_pallets.neutral_variant.Nuetral_variant_Color_80}"
+  },
+  "Surface_container_highest_Color": {
+    "$type": "color",
+    "$value": "{color_pallets.Neutral_extended.Nuetral_extended_22}"
+  },
+  "Surface_container_high_Color": {
+    "$type": "color",
+    "$value": "{color_pallets.Neutral_extended.Neutral_extended_17}"
+  },
+  "Surface_container_low_Color": {
+    "$type": "color",
+    "$value": "{color_pallets.Neutral_extended.Neutral_extended_10}"
+  },
+  "Surface_container__Color": {
+    "$type": "color",
+    "$value": "{color_pallets.Neutral_extended.Neutral_extended_12}"
+  },
+  "Surface_container_Lowest": {
+    "$type": "color",
+    "$value": "{color_pallets.Neutral_extended.Neutral_extended__4}"
+  },
+  "Inverse_surface": {
+    "$type": "color",
+    "$value": "{color_pallets.Neutral.Nuetral_Color_90}"
+  },
+  "Inverse_On_surface": {
+    "$type": "color",
+    "$value": "{color_pallets.Neutral.Nuetral_Color_20}"
+  },
+  "Surface_tint": {
+    "$type": "color",
+    "$value": "{color_pallets.primary.Primary_Color_80}"
+  },
+  "Outline_color": {
+    "$type": "color",
+    "$value": "{color_pallets.neutral_variant.Nuetral_variant_Color_60}"
+  },
+  "Outline_Variant_Color": {
+    "$type": "color",
+    "$value": "{color_pallets.neutral_variant.Nuetral_variant_Color_30}"
+  },
+  "Primary_fixed": {
+    "$type": "color",
+    "$value": "{color_pallets.primary.Primary_Color_80}"
+  },
+  "On_primary_fiexed_dim": {
+    "$type": "color",
+    "$value": "{color_pallets.primary.Primary_Color_0}"
+  },
+  "Primary_fixed_dim": {
+    "$type": "color",
+    "$value": "{color_pallets.primary.Primary_Color_60}"
+  },
+  "On_primary_fixed_variant": {
+    "$type": "color",
+    "$value": "{color_pallets.primary.Primary_Color_20}"
+  },
+  "Inverse_primary": {
+    "$type": "color",
+    "$value": "{color_pallets.primary.Primary_Color_60}"
+  },
+  "secondary_fixed": {
+    "$type": "color",
+    "$value": "{color_pallets.secondary.Secondary_Color_can_80}"
+  },
+  "On_secondary_fixed": {
+    "$type": "color",
+    "$value": "{color_pallets.secondary.Secondary_Color_0}"
+  },
+  "Secondary_fixed_dim": {
+    "$type": "color",
+    "$value": "{color_pallets.secondary.Secondary_Color_60}"
+  },
+  "On_secondary_fixed_variant": {
+    "$type": "color",
+    "$value": "{color_pallets.secondary.Secondary_Color_20}"
+  },
+  "Tertiay_fixed": {
+    "$type": "color",
+    "$value": "{color_pallets.Tertiary.Tertiary_Color_80}"
+  },
+  "On_tertiary_fixed": {
+    "$type": "color",
+    "$value": "{color_pallets.Tertiary.Tertiary_Color_0}"
+  },
+  "On_tertiary_fixed_dim": {
+    "$type": "color",
+    "$value": "{color_pallets.Tertiary.Tertiary_Color_60}"
+  },
+  "On_tertiary_fixed_variant": {
+    "$type": "color",
+    "$value": "{color_pallets.Tertiary.Tertiary_Color_20}"
+  },
+  "Background_color": {
+    "$type": "color",
+    "$value": "{color_pallets.Neutral_extended.Neutral_extended_6}"
+  },
+  "On_background": {
+    "$type": "color",
+    "$value": "{color_pallets.Neutral.Nuetral_Color_90}"
+  },
+  "Surface_bright": {
+    "$type": "color",
+    "$value": "{color_pallets.Neutral_extended.Nuetral_extended_24}"
+  },
+  "scrim": {
+    "$type": "color",
+    "$value": "{color_pallets.Neutral.Nuetral_Color_10}"
+  },
+  "shadow": {
+    "$type": "color",
+    "$value": "{color_pallets.primary.Primary_Color_0}"
+  }
+}

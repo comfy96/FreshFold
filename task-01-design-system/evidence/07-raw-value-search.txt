@@ -1,0 +1,3 @@
+./task-01-design-system/scripts/tokens-to-css.js:1:#!/usr/bin/env node
+./task-01-design-system/scripts/tokens-to-css.js:76:  if (/^#[0-9a-f]{6}ff$/i.test(s)) {
+./task-01-design-system/scripts/tokens-to-css.js:80:  if (/^#[0-9a-f]{8}$/i.test(s)) {
