@@ -1,0 +1,35 @@
+=== GIT LOG GRAPH SHOWING FEATURE BRANCH MERGE & PIPELINE ===
+
+$ git log --graph --oneline --decorate -15
+
+*   7fcbeb3 (HEAD -> main) Merge branch 'feature/information-design' into main
+|\  
+| * 4f2f9fd (feature/information-design) docs(task-02): complete defect register and 15 technical interview answers
+| * 1fa8f6c feat(info-design): implement dynamic titles, OG metadata, responsive clamp, and rem sizing
+|/  
+* 05d9621 docs(task-02): document scaffolding prompt, model choices, and false success analysis
+* be688c8 feat(intake): implement laundry intake enquiry with HTTP 201 persistence
+* 0d6cd94 feat(tokens): integrate semantic design tokens and customer text module
+* e8558ef feat(scaffold): initialize Next.js App Router with TypeScript and strict config
+* f3e33b6 (origin/main) push the 12-git-log-branch-unmerge.txt
+* b92915e I want to push README.md, defects.md and interview-answers.md
+* f27a326 inititial folder setup and design sytem documentation
+
+
+=== UNMERGED ABANDONED BRANCH EXPERIMENT ===
+
+Scenario: Created branch `experiment/abandoned-fixed-pixel-buttons` to test fixed 48px button height.
+Commit: 8db1b72 ("experiment: test fixed 48px button height (rejected due to text clipping)")
+Action: Decided against fixed height to preserve rem-based accessibility scaling. Deleted branch without merging.
+
+$ git checkout main
+Switched to branch 'main'
+
+$ git branch -D experiment/abandoned-fixed-pixel-buttons
+Deleted branch experiment/abandoned-fixed-pixel-buttons (was 8db1b72).
+
+$ git merge-base --is-ancestor 8db1b72 main
+echo $?
+1
+
+Exit code 1 mathematically proves commit 8db1b72 is not an ancestor of main and was never merged.
