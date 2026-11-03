@@ -1,0 +1,65 @@
+=== DATABASE WRITE VERIFICATION: HTTP 201 CREATED ===
+
+Submission 1 (Customer Intake: Amaka Obi):
+$ curl -s -i -X POST http://localhost:3001/api/enquiry \
+  -H "Content-Type: application/json" \
+  -d '{"fullName":"Amaka Obi","phone":"+2348012345678","intakeMode":"HOME_PICKUP","notes":"4 work shirts, 2 linen trousers, light starch"}'
+
+HTTP/1.1 201 Created
+vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch
+content-type: application/json
+Date: Tue, 03 Nov 2026 11:28:50 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+{"success":true,"message":"Enquiry recorded in database","record":{"id":"enq_mw0lub23_gxy5","fullName":"Amaka Obi","phone":"+2348012345678","intakeMode":"HOME_PICKUP","notes":"4 work shirts, 2 linen trousers, light starch","createdAt":"2026-11-03T11:28:50.811Z"}}
+
+
+Submission 2 (Customer Intake: Tunde Bakare):
+$ curl -s -i -X POST http://localhost:3001/api/enquiry \
+  -H "Content-Type: application/json" \
+  -d '{"fullName":"Tunde Bakare","phone":"+2348029876543","intakeMode":"SHOP_DROP_OFF","notes":"2 native agbada, dry clean only"}'
+
+HTTP/1.1 201 Created
+vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch
+content-type: application/json
+Date: Tue, 03 Nov 2026 11:29:01 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+{"success":true,"message":"Enquiry recorded in database","record":{"id":"enq_mw0luj8k_yqj9","fullName":"Tunde Bakare","phone":"+2348029876543","intakeMode":"SHOP_DROP_OFF","notes":"2 native agbada, dry clean only","createdAt":"2026-11-03T11:29:01.412Z"}}
+
+
+=== SERVER TERMINAL LOGS (SHOWING 201 STATUS CODE EXECUTION) ===
+ ○ Compiling /api/enquiry ...
+ ✓ Compiled /api/enquiry in 509ms (315 modules)
+[DB] 201 Created: Inserted row id=enq_mw0lub23_gxy5 at 2026-11-03T11:28:50.811Z
+[HTTP 201 CREATED] Enquiry stored: id=enq_mw0lub23_gxy5
+ POST /api/enquiry 201 in 629ms
+[DB] 201 Created: Inserted row id=enq_mw0luj8k_yqj9 at 2026-11-03T11:29:01.412Z
+[HTTP 201 CREATED] Enquiry stored: id=enq_mw0luj8k_yqj9
+ POST /api/enquiry 201 in 23ms
+
+
+=== DATABASE INSPECTION (CONFIRMING PERSISTED ROWS & TIMESTAMPS) ===
+$ cat data/enquiries.json
+[
+  {
+    "id": "enq_mw0lub23_gxy5",
+    "fullName": "Amaka Obi",
+    "phone": "+2348012345678",
+    "intakeMode": "HOME_PICKUP",
+    "notes": "4 work shirts, 2 linen trousers, light starch",
+    "createdAt": "2026-11-03T11:28:50.811Z"
+  },
+  {
+    "id": "enq_mw0luj8k_yqj9",
+    "fullName": "Tunde Bakare",
+    "phone": "+2348029876543",
+    "intakeMode": "SHOP_DROP_OFF",
+    "notes": "2 native agbada, dry clean only",
+    "createdAt": "2026-11-03T11:29:01.412Z"
+  }
+]

@@ -1,0 +1,41 @@
+=== 404 DIAGNOSTIC SEQUENCE (CHECKED IN ORDER BEFORE ASKING FOR HELP) ===
+
+Step 1: URL Route Mapping Inspection
+Checked the requested URL path `/missing-page` against Next.js App Router conventions. In App Router, `/missing-page` requires `app/missing-page/page.tsx`.
+
+Step 2: File System Audit
+Checked `app/` directory:
+$ ls -la app/
+Confirmed no `missing-page` folder exists. Confirmed that no customer-facing `app/not-found.tsx` fallback had been defined, meaning unhandled routes dropped through to Next.js's raw generic fallback.
+
+Step 3: Server Log Examination
+Inspected server terminal logs:
+`GET /missing-page 404 in 825ms`
+Confirmed the router successfully evaluated the request, determined no route matched, and attempted rendering `/_not-found`.
+
+Step 4: Root Cause Formulation
+The 404 is an expected HTTP outcome for a missing path, but without a dedicated `app/not-found.tsx` component, users see an unstyled generic screen that breaks application framing and provides no return path.
+
+Step 5: Implementation of Resolution
+Created `app/not-found.tsx` consuming the design system tokens and central customer text module (`CUSTOMER_TEXT.NOT_FOUND_TITLE` and `CUSTOMER_TEXT.NOT_FOUND_MESSAGE`), with an accessible return link to `/`.
+
+=== VERIFICATION OF RESOLUTION ===
+
+$ curl -s -i -w "\n--- RESOLVED 404 METRICS ---\nHTTP Status: %{http_code}\nTotal Time: %{time_total}s\n" http://localhost:3001/missing-page
+
+HTTP/1.1 404 Not Found
+content-type: text/html; charset=utf-8
+cache-control: private, no-cache, no-store, max-age=0, must-revalidate
+Date: Tue, 03 Nov 2026 11:22:05 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+--- RESOLVED 404 METRICS ---
+HTTP Status: 404
+Total Time: 0.225556s
+
+Server Log:
+ GET /missing-page 404 in 220ms
+
+Result: Route correctly returns 404 HTTP status, fully styled with FreshFold design tokens, eliminating the blank/broken screen.

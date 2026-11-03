@@ -1,0 +1,28 @@
+=== INSPECTING PROCESS HOLDING PORT 3001 ===
+
+$ lsof -iTCP:3001 -sTCP:LISTEN
+COMMAND   PID                USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+node    58765 comfortigbokoalexis   17u  IPv6 0x40a053be627053ba      0t0  TCP *:redwood-broker (LISTEN)
+
+Process ID identified: 58765 (Node.js dev server instance)
+
+
+=== TERMINATING CONFLICTING PROCESS ===
+
+$ kill -9 58765
+Killed PID 58765 successfully
+
+$ lsof -iTCP:3001 -sTCP:LISTEN
+Port 3001 is now free
+
+
+=== RESTARTING SERVER CLEANLY ON PORT 3001 ===
+
+$ npx next dev -p 3001
+
+   ▲ Next.js 15.5.28
+   - Local:        http://localhost:3001
+   - Network:      http://192.168.1.185:3001
+
+ ✓ Starting...
+ ✓ Ready in 4.8s

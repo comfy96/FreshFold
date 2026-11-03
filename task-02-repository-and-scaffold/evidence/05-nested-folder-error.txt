@@ -1,0 +1,25 @@
+=== REPRODUCING NESTED FOLDER ERROR ===
+Scenario: Agent ran `npx create-next-app freshfold-app` inside the repository root /Users/comfortigbokoalexis/Desktop/FreshFold, creating a nested project folder rather than scaffolding in place (`./`).
+Command run from workspace root:
+
+$ npm run dev
+
+npm error code ENOENT
+npm error syscall open
+npm error path /Users/comfortigbokoalexis/Desktop/FreshFold/package.json
+npm error errno -2
+npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/Users/comfortigbokoalexis/Desktop/FreshFold/package.json'
+npm error enoent This is related to npm not being able to find a file.
+npm error enoent 
+
+npm error A complete log of this run can be found in: /Users/comfortigbokoalexis/.npm/_logs/2026-11-03T11_18_25_482Z-eresolve.log
+
+--- DIRECTORY MISMATCH EVIDENCE ---
+$ ls -la
+drwxr-xr-x  11 comfortigbokoalexis  staff    352 Nov  3 12:00 .
+drwxr-xr-x   4 comfortigbokoalexis  staff    128 Nov  3 10:50 .git
+drwxr-xr-x   7 comfortigbokoalexis  staff    224 Nov  3 12:00 freshfold-app
+drwxr-xr-x  11 comfortigbokoalexis  staff    352 Nov  2 15:13 task-01-design-system
+drwxr-xr-x   5 comfortigbokoalexis  staff    160 Nov  3 12:00 task-02-repository-and-scaffold
+
+The project files, package.json, and app/ directory exist only within freshfold-app/, causing all root-level npm, lint, and CI workflows to fail.

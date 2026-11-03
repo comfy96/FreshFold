@@ -1,0 +1,53 @@
+=== RESOLUTION 1: CHANGING DIRECTORY (TEMPORARY WORKAROUND) ===
+
+$ cd freshfold-app && pwd
+/Users/comfortigbokoalexis/Desktop/FreshFold/freshfold-app
+
+$ npm run dev
+
+> freshfold@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.5.28
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.1.185:3000
+
+ ✓ Starting...
+ ✓ Ready in 1.9s
+
+Downside of Resolution 1: Requires persistent `cd freshfold-app` for every developer and CI job; decouples .git, root documentation (task-01, task-02), and top-level configs.
+
+
+=== RESOLUTION 2: RESCAFFOLDING IN PLACE (PERMANENT ENGINEERING FIX) ===
+
+Instructed agent to scaffold cleanly in place at root `./`:
+"Do not create a nested folder. Place package.json, tsconfig.json, app/, and next.config.ts directly at the repository root (/Users/comfortigbokoalexis/Desktop/FreshFold)."
+
+Verification from root:
+
+$ pwd
+/Users/comfortigbokoalexis/Desktop/FreshFold
+
+$ ls -la package.json app/ layout.tsx 2>/dev/null || ls -la package.json app/
+-rw-r--r--  1 comfortigbokoalexis  staff   447 Nov  3 11:42 package.json
+
+app/:
+total 24
+-rw-r--r--  1 comfortigbokoalexis  staff  1924 Nov  3 11:45 globals.css
+-rw-r--r--  1 comfortigbokoalexis  staff   868 Nov  3 11:45 layout.tsx
+-rw-r--r--  1 comfortigbokoalexis  staff   428 Nov  3 11:45 page.tsx
+-rw-r--r--  1 comfortigbokoalexis  staff  6960 Nov  3 11:44 tokens.css
+
+$ npm run dev
+
+> freshfold@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.5.28
+   - Local:        http://localhost:3001
+   - Network:      http://192.168.1.185:3001
+
+ ✓ Starting...
+ ✓ Ready in 2.1s
+
+Result: Clean root execution, unified Git repository, and zero nested folder drift.

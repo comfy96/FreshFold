@@ -1,0 +1,33 @@
+Phase 1: Agent Plan & Stated Assumptions Captured Prior to Execution
+
+Timestamp: 2026-11-03T11:36:12+01:00
+Target System: FreshFold Laundry (Tally)
+Tool: Antigravity Agent
+
+================================================================================
+1. Architectural, Tech Stack, & Design System Summary
+================================================================================
+- Target Persona & Context: Built for Amaka Obi (and the 25-45 demographic in Nigeria) using an entry-level Android device with constrained storage, an intermittent weekly data bundle, and unreliable connectivity. Target transfer is <200 KB with an offline-first, quiet "receipt-book" aesthetic.
+- Core Architecture:
+  * Next.js App Router: Separation across customer pages (/app), internal staff/owner management (/internal), and API handlers (/api).
+  * Zero-Leak Security Boundary: Customer ID is derived exclusively from server session cookies--never from request paths, query strings, or client state. Scoped query helpers enforce row-level filtering and read audit logging (PrivateReadAudit).
+  * Strict Model Sandboxing: Gemini LLM is used strictly for embedding approved shared shop cards and answering informational queries (temperature 0, strict JSON schema). The model is never used for private records (balances, item counts, statuses), which are templated directly in server code from database rows.
+- Tech Stack:
+  * Framework & Language: Next.js with App Router, TypeScript (strict mode enabled; any and @ts-ignore forbidden).
+  * Database & Indexing: PostgreSQL with Prisma ORM; pgvector for approved shared card embeddings only (no private model may have a vector column).
+  * Styling: Vanilla CSS / CSS custom properties. No Tailwind.
+- Design System Rules:
+  * Token Strictness: Styling must strictly consume semantic CSS variables compiled in tokens-light.css and tokens.css. Raw hex values, arbitrary RGB/HSL, and untracked pixel overrides are forbidden.
+  * Color Roles: Semantic roles only (--freshfold-color-{role}), such as --freshfold-color-surface, --freshfold-color-on-surface, and --freshfold-color-primary. Palette primitives (--palette-*) are never exposed or consumed.
+  * Typography: Plus Jakarta Sans using atomic variables (--freshfold-type-{role}-{size}-{property}) across defined roles (display, headline, title, body, label).
+  * Shadows: 3 elevation levels (--freshfold-shadow-soft-shadow, --freshfold-shadow-medium-shadow, --freshfold-shadow-hard-shadow).
+  * Layout: Minimal, quiet base layout shell anchored to 100vh / 100dvh.
+
+================================================================================
+2. Technical & Configuration Assumptions
+================================================================================
+1. Target Directory: Project scaffold lives at repository root (/Users/comfortigbokoalexis/Desktop/FreshFold), with task-01-design-system and task-02-repository-and-scaffold as standalone documentation and evidence directories.
+2. Default Color Theme: FreshFold's primary customer experience is designed around the light theme (tokens-light.css). The initial foundation layout defaults to light mode (:root) with dark mode tokens available under [data-theme="dark"].
+3. Spacing & Radius Tokens (Defect DS-08): The Figma token export omitted spacing and border-radius tokens. To eliminate raw pixel values, semantic spacing tokens (--freshfold-space-0 to --freshfold-space-16) and radius tokens (--freshfold-radius-sm to --freshfold-radius-full) plus layout dimensional tokens are declared in app/tokens.css.
+4. Font Integration: Plus Jakarta Sans is loaded using next/font/google in the root layout with swap display to optimize bundle size and prevent layout shifts on throttled connections.
+5. Scope Boundary: Only standard project configuration (package.json, tsconfig.json, next.config.ts, .env.example), token integration (tokens.css, globals.css), root layout shell (layout.tsx), and an empty/minimal 100dvh home container (page.tsx) are scaffolded. No database connections, auth flows, routes, or product features.

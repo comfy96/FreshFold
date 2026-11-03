@@ -1,0 +1,21 @@
+$ curl -s -w "\n--- METRICS ---\nHTTP Status: %{http_code}\nDNS Lookup: %{time_namelookup}s\nConnect: %{time_connect}s\nApp Connect: %{time_appconnect}s\nPre-transfer: %{time_pretransfer}s\nStart Transfer: %{time_starttransfer}s\nTotal Time: %{time_total}s\n" http://localhost:3001
+
+--- METRICS ---
+HTTP Status: 200
+DNS Lookup: 0.000102s
+Connect: 0.000240s
+App Connect: 0.000000s
+Pre-transfer: 0.000278s
+Start Transfer: 2.933628s
+Total Time: 2.939409s
+
+--- SERVER LOG OUTPUT ---
+ ○ Compiling / ...
+ ✓ Compiled / in 2.7s (579 modules)
+ GET / 200 in 2930ms
+
+--- RELOAD METRICS (SUBSEQUENT HIT) ---
+HTTP Status: 200
+Start Transfer: 0.031009s
+Total Time: 0.036244s
+Server Log: GET / 200 in 31ms
