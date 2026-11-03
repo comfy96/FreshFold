@@ -1,0 +1,18 @@
+[
+  {
+    "id": "enq_mw0lub23_gxy5",
+    "fullName": "Amaka Obi",
+    "phone": "+2348012345678",
+    "intakeMode": "HOME_PICKUP",
+    "notes": "4 work shirts, 2 linen trousers, light starch",
+    "createdAt": "2026-11-03T11:28:50.811Z"
+  },
+  {
+    "id": "enq_mw0luj8k_yqj9",
+    "fullName": "Tunde Bakare",
+    "phone": "+2348029876543",
+    "intakeMode": "SHOP_DROP_OFF",
+    "notes": "2 native agbada, dry clean only",
+    "createdAt": "2026-11-03T11:29:01.412Z"
+  }
+]
